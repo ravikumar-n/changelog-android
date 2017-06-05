@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  >
+
+  <TextView
+    android:id="@+id/sectionThemingTextView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/section_theming"
+    style="@style/Settings.Text.Section"
+    />
+
+  <RelativeLayout
+    android:id="@+id/autoDayNightLayout"
+    style="@style/Settings.Container"
+    >
+    <ImageView
+      android:id="@+id/autoDayNightImageView"
+      android:contentDescription="@string/cd_auto_daynight"
+      app:srcCompat="@drawable/ic_day_and_night_black_36dp"
+      style="@style/Settings.Image"
+      />
+
+    <CheckBox
+      android:id="@+id/autoDayNightCheckBox"
+      style="@style/Settings.CheckBox"
+      />
+
+    <TextView
+      android:id="@+id/autoDayNightTitleTextView"
+      android:layout_toEndOf="@+id/autoDayNightImageView"
+      android:layout_toStartOf="@id/autoDayNightCheckBox"
+      android:text="@string/auto_theme"
+      style="@style/Settings.Text.Primary"
+      />
+
+    <TextView
+      android:id="@+id/autoDayNightSummaryTextView"
+      android:layout_below="@+id/autoDayNightTitleTextView"
+      android:layout_toEndOf="@+id/autoDayNightImageView"
+      android:layout_toStartOf="@id/autoDayNightCheckBox"
+      android:text="@string/auto_theme_summary"
+      style="@style/Settings.Text.Secondary"
+      />
+  </RelativeLayout>
+
+  <View style="@style/Settings.Divider"/>
+
+  <RelativeLayout
+    android:id="@+id/nightLayout"
+    style="@style/Settings.Container"
+    >
+    <ImageView
+      android:id="@+id/nightThemeImageView"
+      android:contentDescription="@string/cd_night"
+      app:srcCompat="@drawable/ic_night_black_36dp"
+      style="@style/Settings.Image"
+      />
+
+    <CheckBox
+      android:id="@+id/nightThemeCheckBox"
+      style="@style/Settings.CheckBox"
+      />
+
+    <TextView
+      android:id="@+id/nightThemeTitleTextView"
+      android:layout_toEndOf="@+id/nightThemeImageView"
+      android:layout_toStartOf="@id/nightThemeCheckBox"
+      android:text="@string/night_theme"
+      style="@style/Settings.Text.Primary"
+      />
+
+    <TextView
+      android:id="@+id/nightThemeSummaryTextView"
+      android:layout_below="@+id/nightThemeTitleTextView"
+      android:layout_toEndOf="@+id/nightThemeImageView"
+      android:layout_toStartOf="@id/nightThemeCheckBox"
+      android:text="@string/night_theme_summary"
+      style="@style/Settings.Text.Secondary"
+      />
+  </RelativeLayout>
+
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/section_general"
+    style="@style/Settings.Text.Section"
+    />
+
+  <RelativeLayout
+    android:id="@+id/analyticsLayout"
+    style="@style/Settings.Container"
+    >
+    <ImageView
+      android:id="@+id/analyticsImageView"
+      android:contentDescription="@string/cd_analytics"
+      android:padding="@dimen/spacing_small"
+      app:srcCompat="@drawable/ic_user_analytics_black"
+      style="@style/Settings.Image"
+      />
+
+    <CheckBox
+      android:id="@+id/analyticsCheckBox"
+      style="@style/Settings.CheckBox"
+      />
+
+    <TextView
+      android:id="@+id/analyticsTitleTextView"
+      android:layout_toEndOf="@+id/analyticsImageView"
+      android:layout_toStartOf="@id/analyticsCheckBox"
+      android:text="@string/analytics"
+      style="@style/Settings.Text.Primary"
+      />
+
+    <TextView
+      android:id="@+id/analyticsSummaryTextView"
+      android:layout_below="@+id/analyticsTitleTextView"
+      android:layout_toEndOf="@+id/analyticsImageView"
+      android:layout_toStartOf="@id/analyticsCheckBox"
+      android:text="@string/analytics_summary"
+      style="@style/Settings.Text.Secondary"
+      />
+  </RelativeLayout>
+
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/section_share"
+    style="@style/Settings.Text.Section"
+    />
+
+  <RelativeLayout
+    android:id="@+id/shareLayout"
+    style="@style/Settings.Container"
+    >
+    <ImageView
+      android:id="@+id/shareImageView"
+      android:contentDescription="@string/cd_share"
+      android:padding="@dimen/spacing_small"
+      app:srcCompat="@drawable/ic_share_black_24dp"
+      style="@style/Settings.Image"
+      />
+
+    <TextView
+      android:id="@+id/shareTitleTextView"
+      android:layout_toEndOf="@+id/shareImageView"
+      android:text="@string/spread"
+      style="@style/Settings.Text.Primary"
+      />
+
+    <TextView
+      android:id="@+id/shareSummaryTextView"
+      android:layout_below="@+id/shareTitleTextView"
+      android:layout_toEndOf="@+id/shareImageView"
+      android:text="@string/spread_summary"
+      style="@style/Settings.Text.Secondary"
+      />
+  </RelativeLayout>
+
+  <View style="@style/Settings.Divider"/>
+
+  <RelativeLayout
+    android:id="@+id/reviewLayout"
+    style="@style/Settings.Container"
+    >
+    <ImageView
+      android:id="@+id/reviewImageView"
+      android:contentDescription="@string/cd_review"
+      android:padding="@dimen/spacing_small"
+      app:srcCompat="@drawable/ic_rate_black_24dp"
+      style="@style/Settings.Image"
+      />
+
+    <TextView
+      android:id="@+id/reviewTitleTextView"
+      android:layout_toEndOf="@+id/reviewImageView"
+      android:text="@string/review"
+      style="@style/Settings.Text.Primary"
+      />
+
+    <TextView
+      android:id="@+id/reviewSummaryTextView"
+      android:layout_below="@+id/reviewTitleTextView"
+      android:layout_toEndOf="@+id/reviewImageView"
+      android:text="@string/review_summary"
+      style="@style/Settings.Text.Secondary"
+      />
+  </RelativeLayout>
+
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/section_support"
+    style="@style/Settings.Text.Section"
+    />
+
+  <RelativeLayout
+    android:id="@+id/feedbackLayout"
+    style="@style/Settings.Container"
+    >
+    <ImageView
+      android:id="@+id/feedbackImageView"
+      android:contentDescription="@string/cd_user_feedback"
+      android:padding="@dimen/padding_small"
+      app:srcCompat="@drawable/ic_feedback_black_24dp"
+      style="@style/Settings.Image"
+      />
+
+    <TextView
+      android:id="@+id/feedbackTitleTextView"
+      android:layout_toEndOf="@+id/feedbackImageView"
+      android:text="@string/feedback"
+      style="@style/Settings.Text.Primary"
+      />
+
+    <TextView
+      android:id="@+id/feedbackSummaryTextView"
+      android:layout_below="@+id/feedbackTitleTextView"
+      android:layout_toEndOf="@+id/feedbackImageView"
+      android:text="@string/feedback_summary"
+      style="@style/Settings.Text.Secondary"
+      />
+  </RelativeLayout>
+
+  <View style="@style/Settings.Divider"/>
+
+  <RelativeLayout
+    android:id="@+id/twitterLayout"
+    style="@style/Settings.Container"
+    >
+    <ImageView
+      android:id="@+id/twitterImageView"
+      android:contentDescription="@string/cd_twitter"
+      android:padding="@dimen/spacing_small"
+      app:srcCompat="@drawable/ic_twitter_black_24dp"
+      style="@style/Settings.Image"
+      />
+
+    <TextView
+      android:id="@+id/twitterTitleTextView"
+      android:layout_toEndOf="@+id/twitterImageView"
+      android:text="@string/twitter"
+      style="@style/Settings.Text.Primary"
+      />
+
+    <TextView
+      android:id="@+id/twitterSummaryTextView"
+      android:layout_below="@+id/twitterTitleTextView"
+      android:layout_toEndOf="@+id/twitterImageView"
+      android:text="@string/twitter_summary"
+      style="@style/Settings.Text.Secondary"
+      />
+  </RelativeLayout>
+
+  <TextView
+    android:id="@+id/sectionAboutTextView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/section_about"
+    style="@style/Settings.Text.Section"
+    />
+
+  <RelativeLayout style="@style/Settings.Container">
+    <ImageView
+      android:id="@+id/versionImageView"
+      android:contentDescription="@string/cd_version"
+      android:padding="@dimen/spacing_small"
+      app:srcCompat="@drawable/ic_version_black"
+      style="@style/Settings.Image"
+      />
+
+    <TextView
+      android:id="@+id/versionTitleTextView"
+      android:layout_toEndOf="@+id/versionImageView"
+      android:text="@string/version"
+      style="@style/Settings.Text.Primary"
+      />
+
+    <TextView
+      android:id="@+id/versionSummaryTextView"
+      android:layout_below="@+id/versionTitleTextView"
+      android:layout_toEndOf="@+id/versionImageView"
+      tools:text="v0.1-alpha"
+      style="@style/Settings.Text.Secondary"
+      />
+  </RelativeLayout>
+</LinearLayout>

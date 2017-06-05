@@ -1,0 +1,61 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+  def globalConfiguration = rootProject.extensions.getByName("ext")
+
+  compileSdkVersion globalConfiguration["androidCompileSdkVersion"]
+
+  defaultConfig {
+    minSdkVersion globalConfiguration["androidMinSdkVersion"]
+    targetSdkVersion globalConfiguration["androidTargetSdkVersion"]
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  }
+
+  sourceSets {
+    main.java.srcDirs += 'src/main/java'
+    test.java.srcDirs += 'src/test/java'
+    androidTest.java.srcDirs += 'src/androidTest/java'
+  }
+}
+
+dependencies {
+  implementation project(':domain')
+  implementation project(':entities')
+  testImplementation project(':sharedtests')
+  androidTestImplementation project(':sharedtests')
+
+  def dataDependencies = rootProject.ext.dataDependencies
+  def commonDependencies = rootProject.ext.commonDependencies
+
+  implementation commonDependencies.kotlinStdLibrary
+  implementation commonDependencies.timber
+  implementation commonDependencies.gson
+
+  // Room
+  implementation commonDependencies.room
+  implementation commonDependencies.roomRx
+  kapt commonDependencies.roomCompiler
+
+  implementation dataDependencies.javaxInject
+  implementation dataDependencies.okHttp
+  implementation dataDependencies.rxJava
+  implementation dataDependencies.rxAndroid
+  implementation dataDependencies.retrofit
+
+  // Testing
+  def testingDependencies = rootProject.ext.testingDependencies
+
+  testImplementation commonDependencies.kotlinStdLibrary
+  testImplementation testingDependencies.junit
+  testImplementation testingDependencies.mockito
+  testImplementation testingDependencies.kotlinTest
+
+  androidTestImplementation commonDependencies.kotlinStdLibrary
+  androidTestImplementation testingDependencies.junit
+  androidTestImplementation testingDependencies.mockito
+  androidTestImplementation testingDependencies.archTesting
+  androidTestImplementation testingDependencies.runner
+  androidTestImplementation testingDependencies.rules
+}

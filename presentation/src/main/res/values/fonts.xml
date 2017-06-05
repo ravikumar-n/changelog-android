@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- Roboto -->
+  <string name="font_fontFamily_normal" translatable="false">sans-serif</string>
+  <!-- Roboto Light-->
+  <string name="font_fontFamily_light" translatable="false">sans-serif-light</string>
+  <!-- Roboto Condensed -->
+  <string name="font_fontFamily_condensed" translatable="false">sans-serif-condensed</string>
+  <!-- Roboto thin (Support 4.2+) -->
+  <string name="font_fontFamily_thin" translatable="false">sans-serif-thin</string>
+  <!-- Roboto Medium (Support 5.0+) -->
+  <string name="font_fontFamily_medium" translatable="false">sans-serif-medium</string>
+</resources>

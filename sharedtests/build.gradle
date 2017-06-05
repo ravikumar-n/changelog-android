@@ -1,0 +1,25 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+  def globalConfiguration = rootProject.extensions.getByName("ext")
+
+  compileSdkVersion globalConfiguration["androidCompileSdkVersion"]
+
+  defaultConfig {
+    minSdkVersion globalConfiguration["androidMinSdkVersion"]
+    targetSdkVersion globalConfiguration["androidTargetSdkVersion"]
+  }
+
+  sourceSets {
+    main.java.srcDirs += 'src/main/java'
+  }
+}
+
+dependencies {
+  implementation project(':entities')
+
+  def commonDependencies = rootProject.ext.commonDependencies
+  implementation commonDependencies.kotlinStdLibrary
+  implementation commonDependencies.gson
+}

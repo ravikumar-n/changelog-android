@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:padding="@dimen/padding_normal"
+  >
+
+  <ImageView
+    android:id="@+id/headerImage"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/spacing_medium"
+    android:contentDescription="@string/cd_onboarding"
+    android:scaleType="fitCenter"
+    app:layout_constraintBottom_toTopOf="@+id/titleText"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.7"
+    tools:src="@drawable/onboarding_step_two"
+    />
+
+  <TextView
+    android:id="@+id/titleText"
+    android:layout_width="wrap_content"
+    android:layout_height="0dp"
+    android:textAppearance="@style/AppTheme.TextAppearance.RobotoMedium"
+    android:textColor="@color/onboardingTextColor"
+    android:textSize="@dimen/text_size_xlarge"
+    app:layout_constraintBottom_toTopOf="@+id/contentText"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    tools:text="@string/step_one_subscribe"
+    />
+
+  <TextView
+    android:id="@+id/contentText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/spacing_medium"
+    android:gravity="center"
+    android:maxWidth="480dp"
+    android:textAppearance="@style/AppTheme.TextAppearance.RobotoLight"
+    android:textColor="@color/onboardingTextColor"
+    android:textSize="@dimen/text_size_xmedium"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    tools:text="@string/step_one_subscribe_description"
+    />
+
+</android.support.constraint.ConstraintLayout>

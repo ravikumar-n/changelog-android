@@ -1,0 +1,48 @@
+buildscript {
+  apply from: "config/dependencies.gradle"
+  ext.kotlin_version = "$kotlinVersion"
+
+  repositories {
+    google()
+    jcenter()
+    maven { url 'https://maven.fabric.io/public' }
+    maven { url "https://plugins.gradle.org/m2/" }
+  }
+  dependencies {
+    classpath compileDependencies.gradlePlugin
+    classpath compileDependencies.kotlinPlugin
+    classpath compileDependencies.googleServicesPlugin
+    classpath compileDependencies.versionsPlugin
+    classpath compileDependencies.crashlyticsPlugin
+  }
+}
+
+plugins {
+  id "io.gitlab.arturbosch.detekt" version "1.0.0.RC6-4"
+}
+
+allprojects {
+  repositories {
+    google()
+    jcenter()
+    mavenCentral()
+  }
+}
+
+subprojects {
+  apply plugin: 'com.github.ben-manes.versions'
+}
+
+task clean(type: Delete) {
+  delete rootProject.buildDir
+}
+
+detekt {
+  version = "1.0.0.RC6-4"
+  profile("main") {
+    input = "$projectDir/presentation/src/main/java"
+    config = "$projectDir/code-analysis/detekt.yml"
+    filters = ".*test.*,.*/resources/.*,.*/tmp/.*,.*/InkPageIndicator.kt"
+    output = "$projectDir/presentation/build/reports/detekt"
+  }
+}

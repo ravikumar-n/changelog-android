@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@drawable/ic_purple_bg"
+  android:gravity="center_horizontal"
+  android:orientation="vertical"
+  tools:context=".features.subscriptions.SubscriptionActivity"
+  >
+
+  <android.support.v7.widget.Toolbar
+    android:id="@+id/subscriptionToolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_toolbar_transparent"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+    style="@style/Widget.Changelog.Toolbar"
+    />
+
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginTop="@dimen/spacing_medium"
+    android:gravity="center"
+    android:paddingLeft="@dimen/padding_normal"
+    android:paddingRight="@dimen/padding_normal"
+    android:text="@string/free_trial_period"
+    android:textAppearance="@style/AppTheme.TextAppearance.RobotoLight"
+    android:textColor="@color/white"
+    />
+
+  <android.support.constraint.ConstraintLayout
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <android.support.constraint.ConstraintLayout
+      android:id="@+id/freeLayout"
+      android:layout_marginTop="@dimen/spacing_medium"
+      app:layout_constraintBottom_toTopOf="@+id/halfYearlyLayout"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      style="@style/Subscription.Card"
+      >
+
+      <TextView
+        android:id="@+id/planFreeTitleText"
+        android:text="@string/plan_free"
+        app:layout_constraintBottom_toTopOf="@+id/planFreeDescriptionText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        style="@style/Subscription.Text.Primary"
+        />
+
+      <TextView
+        android:id="@+id/planFreeDescriptionText"
+        android:text="@string/plan_free_description"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/planFreeTitleText"
+        style="@style/Subscription.Text.Secondary"
+        />
+
+      <android.support.constraint.Group
+        android:id="@+id/freeGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="freeLayout, planFreeTitleText,planFreeDescriptionText"
+        />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+      android:id="@+id/halfYearlyLayout"
+      android:layout_marginTop="@dimen/spacing_micro"
+      app:layout_constraintBottom_toTopOf="@+id/yearlyLayout"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/freeLayout"
+      style="@style/Subscription.Card"
+      >
+
+      <TextView
+        android:id="@+id/planHalfYearlyTitleText"
+        android:text="@string/plan_half_yearly"
+        app:layout_constraintBottom_toTopOf="@+id/planHalfYearlyDescriptionText"
+        app:layout_constraintRight_toLeftOf="@+id/halfYearlyImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        style="@style/Subscription.Text.Primary"
+        />
+
+      <TextView
+        android:id="@+id/planHalfYearlyDescriptionText"
+        android:text="@string/plan_half_yearly_description"
+        app:layout_constraintBottom_toTopOf="@+id/planHalfYearlyPriceText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/planHalfYearlyTitleText"
+        style="@style/Subscription.Text.Secondary"
+        />
+
+      <TextView
+        android:id="@+id/planHalfYearlyPriceText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/planHalfYearlyDescriptionText"
+        tools:text="$0.99"
+        style="@style/Subscription.Text.Secondary"
+        />
+
+      <ImageView
+        android:id="@+id/halfYearlyImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_medium"
+        android:layout_marginStart="@dimen/spacing_large"
+        android:contentDescription="@string/cd_half_yearly"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_idlies"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+      <android.support.constraint.Group
+        android:id="@+id/halfYearlyGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="halfYearlyLayout, planHalfYearlyTitleText,
+      planHalfYearlyDescriptionText, planHalfYearlyPriceText,halfYearlyImage"
+        />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+      android:id="@+id/yearlyLayout"
+      android:layout_marginTop="@dimen/spacing_micro"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/halfYearlyLayout"
+      style="@style/Subscription.Card"
+      >
+
+      <TextView
+        android:id="@+id/planYearlyTitleText"
+        android:ellipsize="end"
+        android:text="@string/plan_yearly"
+        app:layout_constraintBottom_toTopOf="@+id/planYearlyDescriptionText"
+        app:layout_constraintRight_toLeftOf="@+id/yearlyImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        style="@style/Subscription.Text.Primary"
+        />
+
+      <TextView
+        android:id="@+id/planYearlyDescriptionText"
+        android:text="@string/plan_yearly_description"
+        app:layout_constraintBottom_toTopOf="@+id/planYearlyPriceText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/planYearlyTitleText"
+        style="@style/Subscription.Text.Secondary"
+        />
+
+      <TextView
+        android:id="@+id/planYearlyPriceText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/planYearlyDescriptionText"
+        tools:text="$1.49"
+        style="@style/Subscription.Text.Secondary"
+        />
+
+      <ImageView
+        android:id="@+id/yearlyImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_medium"
+        android:layout_marginStart="@dimen/spacing_large"
+        android:contentDescription="@string/cd_yearly"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_dosas"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+      <android.support.constraint.Group
+        android:id="@+id/yearlyGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="yearlyLayout, planYearlyTitleText,
+        planYearlyDescriptionText, planYearlyPriceText,yearlyImage"
+        />
+    </android.support.constraint.ConstraintLayout>
+  </android.support.constraint.ConstraintLayout>
+</LinearLayout>

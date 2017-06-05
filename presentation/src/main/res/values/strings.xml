@@ -1,0 +1,168 @@
+<resources>
+  <!-- region Common -->
+  <string name="progress_loading">Loading…</string>
+  <string name="platform">android</string>
+  <!-- endregion -->
+
+  <!-- region Onboarding -->
+  <string name="guest">Sign in as Guest</string>
+  <string name="step_one_subscribe">Subscribe</string>
+  <string name="step_one_subscribe_description">Select your favorite library to monitor.</string>
+  <string name="step_two_notification">Get Notified</string>
+  <string name="step_two_notification_description">Stay up to date with changelogs.</string>
+  <string name="alert_no_connection">Oops! unable to connect to Google Play Services. Please check
+    your network connectivity.</string>
+  <!-- endregion -->
+
+  <!-- region Watchlist -->
+  <string name="watchlist">Watchlist</string>
+  <string name="progress_fetching_repositories">Fetching repositories…</string>
+  <string name="empty_repositories">No repositories!</string>
+  <string name="error_failed_to_fetch_repositories">Failed to retrieve repositories list from the Api. Please try again later!</string>
+  <string name="progress_syncing_your_changes">Syncing your watchlist…</string>
+  <string name="sync_watchlist">Sync Watchlist</string>
+  <string name="success_sync_watchlist">Successfully synced your changes</string>
+  <string name="error_sync_watchlist">Failed to sync your changes. Try again!</string>
+  <!-- endregion -->
+
+  <!-- region Guest User -->
+  <string name="progress_create_guest_user">Creating guest user account…</string>
+  <string name="error_failed_to_create_guest_user">Failed to create guest user!</string>
+  <!-- endregion -->
+
+  <!-- region User -->
+  <string name="progress_s_create_user">Welcome %s, Sit on tight while we create your account…</string>
+  <string name="progress_s_connect_user">Hey %s, Sit on tight while we connect your guest account wth your google account.</string>
+  <string name="error_failed_to_create_user">Google sign in failed.</string>
+  <string name="error_invalid_user">Invalid user. Try clearing cache if the issue persists.</string>
+  <string name="error_google_sign_in_failed">Google SignIn failed.</string>
+  <string name="logout">Logout</string>
+  <!-- endregion -->
+
+  <!-- region Device registration -->
+  <string name="progress_register_device">Registering the device to receive notifications</string>
+  <string name="error_failed_to_register_device">Failed to register the device</string>
+  <!-- endregion -->
+
+  <!-- region Feed -->
+  <string name="feed">Feed</string>
+  <string name="title_feed">Your Feed</string>
+  <string name="progress_fetching_feed">Crunching your feed…</string>
+  <string name="empty_feed">No Activity. Have you added any items to watchlist?</string>
+  <string name="error_failed_to_fetch_feed">Failed to fetch the latest feed. Please pray and refresh again!</string>
+  <string name="view_detail">View detail</string>
+  <!-- endregion -->
+
+  <!-- region User Watchlist -->
+  <string name="your_watchlist">Your Watchlist</string>
+  <string name="progress_fetching_user_watchlist">Loading your watchlist…</string>
+  <string name="error_failed_to_fetch_user_watchlist">Failed to fetch your watchlist</string>
+  <string name="empty_user_watchlist">
+    Your watchlist is empty.Add items to your watchlist by pressing the \'+\' button
+  </string>
+  <!-- endregion -->
+
+  <!--  region Changelog Detail -->
+  <string name="title_changelog_detail">Changelog Detail</string>
+  <string name="progress_fetching_changelog_detail">Fetching detail…</string>
+  <string name="empty_feed_detail">No detail found.</string>
+  <string name="error_failed_to_fetch_detail">Failed to fetch detail.</string>
+  <string name="prompt_short_changelog">
+    Since the changelog is humongous, due to application freezing issue only the latest changelog is
+    displayed.
+  </string>
+  <!-- endregion -->
+
+  <!-- region Info -->
+  <string name="title_info">Info</string>
+  <string name="info">Info</string>
+  <string name="theme">Theme</string>
+  <string name="upgrade">Upgrade</string>
+  <string name="info_free_plan">FREE | 5 repos</string>
+  <string name="info_half_yearly">HALF YEARLY | 15 repos</string>
+  <string name="info_yearly">YEARLY | 20 repos</string>
+  <!-- endregion -->
+
+  <!-- region Subscription -->
+  <string name="title_subscription">Subscription</string>
+  <string name="free">FREE \n Unlimited \n 5 repos</string>
+  <string name="s_half_yearly">%s \n per 6 months \n per 15 repos</string>
+  <string name="s_yearly">%s \n per 12 months \n per 20 repos</string>
+  <string name="free_trial_period">
+    Don\'t worry we provide 7 days trial period. By buying the pro version you will help us to run our servers.
+  </string>
+  <string name="progress_register_subscription">Registering your purchase…</string>
+  <string name="plan_free">FREE</string>
+  <string name="plan_free_description">Unlimited | 5 repos</string>
+  <string name="plan_half_yearly">Steaming idlies</string>
+  <string name="plan_half_yearly_description">6 Months | 15 repos</string>
+  <string name="plan_yearly">Crispy Crepe Dosas</string>
+  <string name="plan_yearly_description">12 Months | 20 repos</string>
+  <string name="prompt_user_sign_with_google">
+    You must login with a valid account to buy a subscription.
+  </string>
+  <string name="dialog_login">Login Now</string>
+  <string name="success_s_account_connected">Hey %s, your account is connected you can now proceed with buying the subscription.</string>
+  <string name="error_failed_to_connect_account">Sorry! failed to connect your google account. If the error persists then logout and sign-in with your Google account.</string>
+  <string name="error_register_subscription">Sorry! Failed to verify and register the subscription. Retry after some time</string>
+  <string name="error_fetch_subscription">Unable to fetch your subscription info. Check your connectivity.</string>
+  <!-- endregion -->
+
+  <!-- region Settings -->
+  <string name="action_settings">Settings</string>
+  <!-- endregion -->
+
+  <!-- region Settings:Theme -->
+  <string name="section_theming">Theming</string>
+  <string name="auto_theme">Automatically change theme</string>
+  <string name="auto_theme_summary">Automatically change theme based on current time of the day.</string>
+  <string name="night_theme">Dark theme</string>
+  <string name="night_theme_summary">Use dark theme for entire application.</string>
+  <!-- endregion -->
+
+  <!-- region Settings:General -->
+  <string name="section_general">General</string>
+  <string name="analytics">Analytics</string>
+  <string name="analytics_summary">
+    Enable this to allow automatic uploads of analytics. No personally identifiable information
+    is shared. <!-- Not sure about the Google/Firebase though -->
+  </string>
+  <!-- endregion -->
+
+  <!-- region Settings:Share -->
+  <string name="section_share">Share</string>
+  <string name="spread">Spread the word</string>
+  <string name="prompt_share_text">
+    Easy way to monitor latest releases in your favorite GitHub libraries.\n
+    https://play.google.com/store/apps/details?id=com.ravikumar.changelogmonitor
+  </string>
+  <string name="spread_summary">Share the app among your fellow geeks</string>
+  <string name="review">Leave a review</string>
+  <string name="review_summary">If you are enjoying Changelog, please leave a review on the Play Store</string>
+  <!-- endregion -->
+
+  <!-- region Settings:Support -->
+  <string name="section_support">Support</string>
+
+  <string name="feedback">Feedback</string>
+  <string name="feedback_summary">Experiencing an issue on app? New idea? Let me know your
+    thoughts!</string>
+  <string name="dialog_feedback">Share your thoughts</string>
+  <string name="dialog_send">Send</string>
+  <string name="feedback_sent">Feedback sent!</string>
+  <string name="error_failed_to_send_feedback">Sorry, failed to send the feedback!</string>
+  <string name="error_empty_feedback">Feedback text can\'t be left blank.</string>
+
+  <string name="twitter">Contact via Twitter</string>
+  <string name="twitter_summary">DM your thoughts.</string>
+  <!-- endregion -->
+
+  <!-- region Settings:About -->
+  <string name="section_about">About</string>
+  <string name="version">App Version</string>
+  <!-- endregion -->
+
+  <!-- region Notifications -->
+  <string name="notification_channel_name_changelog">Changelog</string>
+  <!-- endregion -->
+</resources>

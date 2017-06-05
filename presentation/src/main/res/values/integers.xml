@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <integer name="theme_daynight">0</integer>
+  <integer name="theme_light">1</integer>
+  <integer name="theme_dark">2</integer>
+</resources>

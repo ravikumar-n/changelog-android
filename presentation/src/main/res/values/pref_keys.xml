@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="preference_theme">pref_theme</string>
+  <string name="preference_analytics">pref_analytics</string>
+</resources>

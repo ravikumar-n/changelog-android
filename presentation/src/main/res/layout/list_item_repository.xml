@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="?android:attr/selectableItemBackground"
+  android:clickable="true"
+  android:focusable="true"
+  android:orientation="vertical"
+  android:paddingBottom="@dimen/spacing_small"
+  android:paddingLeft="@dimen/padding_normal"
+  android:paddingRight="@dimen/padding_normal"
+  android:paddingTop="@dimen/spacing_small"
+  >
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    <TextView
+      android:id="@+id/titleTextView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textAppearance="@style/ListItemTextAppearance.Primary"
+      tools:text="@sample/repositories.json/repositories/name"
+      />
+
+    <ImageView
+      android:id="@+id/checkMarkImage"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentEnd="true"
+      android:layout_marginStart="@dimen/spacing_micro"
+      android:contentDescription="@string/cd_check"
+      android:visibility="invisible"
+      app:srcCompat="@drawable/ic_check_circle_24dp"
+      tools:visibility="visible"
+      />
+  </RelativeLayout>
+
+  <TextView
+    android:id="@+id/descriptionTextView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/spacing_medium"
+    android:ellipsize="end"
+    android:maxLines="2"
+    android:textAppearance="@style/ListItemTextAppearance.Secondary"
+    tools:text="@sample/repositories.json/repositories/description"
+    />
+
+  <TextView
+    android:id="@+id/tagsTextView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ellipsize="end"
+    android:maxLines="1"
+    android:textAppearance="@style/AppTheme.TextAppearance.RobotoCondensed"
+    android:textColor="@color/tagTextColor"
+    android:textSize="@dimen/text_size_medium"
+    tools:text="@sample/repositories.json/repositories/tags"
+    />
+
+</LinearLayout>

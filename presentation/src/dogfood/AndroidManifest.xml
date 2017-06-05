@@ -1,0 +1,19 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  >
+  <!--suppress AndroidDomInspection -->
+  <!-- region Application -->
+  <application
+    android:name="com.ravikumar.changelogmonitor.DogfoodApplication"
+    android:debuggable="true"
+    tools:ignore="HardcodedDebugMode"
+    tools:replace="android:name">
+
+    <!-- region Firebase -->
+    <meta-data
+      android:name="firebase_analytics_collection_deactivated"
+      android:value="true"/>
+    <!-- endregion -->
+  </application>
+  <!-- endregion -->
+</manifest>

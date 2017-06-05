@@ -1,0 +1,186 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'io.fabric'
+
+android {
+  def globalConfiguration = rootProject.extensions.getByName("ext")
+
+  compileSdkVersion globalConfiguration["androidCompileSdkVersion"]
+
+  defaultConfig {
+    applicationId globalConfiguration["appApplicationId"]
+
+    minSdkVersion globalConfiguration["androidMinSdkVersion"]
+    targetSdkVersion globalConfiguration["androidTargetSdkVersion"]
+
+    versionCode globalConfiguration["appVersionCode"]
+    versionName globalConfiguration["appVersionName"]
+
+    archivesBaseName = "Changelog-${appVersionName}"
+
+    vectorDrawables.useSupportLibrary = true
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    resConfigs "en"
+
+    javaCompileOptions {
+      annotationProcessorOptions {
+        includeCompileClasspath false
+      }
+    }
+
+    buildConfigField "String", "LICENSE_KEY", "\"${playLicenseKey}\""
+  }
+
+  signingConfigs {
+    release {
+      storeFile globalConfiguration["KEYSTORE_STORE_FILE"]
+      storePassword globalConfiguration["KEYSTORE_STORE_PASSWORD"]
+      keyAlias globalConfiguration["KEYSTORE_KEY_ALIAS"]
+      keyPassword globalConfiguration["KEYSTORE_KEY_PASSWORD"]
+    }
+  }
+
+  buildTypes {
+    debug {
+      versionNameSuffix '-dev'
+      applicationIdSuffix '.dev'
+    }
+
+    // Testing play subscription, requires package name same as production
+    // and the apk should be signed with release keys
+    dogfood {
+      signingConfig signingConfigs.release
+      matchingFallbacks = ['debug']
+      debuggable true
+    }
+
+    release {
+      shrinkResources true
+      minifyEnabled true
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+      signingConfig signingConfigs.release
+    }
+  }
+
+  flavorDimensions "mode"
+
+  productFlavors {
+    staging {
+      buildConfigField "String", "BASE_URL", "\"${staging_server_endpoint}\""
+      buildConfigField "String", "SERVER_CLIENT_ID", "\"${staging_server_client_id}\""
+      dimension "mode"
+      versionNameSuffix "staging"
+
+      resValue "string", "app_name", "Changelog Staging"
+    }
+
+    production {
+      buildConfigField "String", "BASE_URL", "\"${production_server_endpoint}\""
+      buildConfigField "String", "SERVER_CLIENT_ID", "\"${production_server_client_id}\""
+      dimension "mode"
+
+      resValue "string", "app_name", "Changelog Monitor"
+    }
+  }
+
+  /*
+   * stagingDebug - Development
+   * productionDogFood - Testing subscriptions
+   * productionRelease - Public release
+   *
+   * Remove all other variants
+   */
+  variantFilter { variant ->
+    def names = variant.flavors*.name
+    if ((names.contains('staging') && variant.buildType.name == 'release')
+      || (names.contains('staging') && variant.buildType.name == 'dogfood')
+      || (names.contains('production') && variant.buildType.name == 'debug')
+    ) {
+      setIgnore(true)
+    }
+  }
+
+  sourceSets {
+    main.java.srcDirs += 'src/main/java'
+    test.java.srcDirs += 'src/test/java'
+  }
+}
+
+dependencies {
+  implementation project(':domain')
+  implementation project(':data')
+  implementation project(':entities')
+  testImplementation project(':sharedtests')
+
+  def presentationDependencies = rootProject.ext.presentationDependencies
+  def commonDependencies = rootProject.ext.commonDependencies
+
+  // Kotlin
+  implementation commonDependencies.kotlinStdLibrary
+
+  // Android
+  implementation presentationDependencies.supportRecyclerView
+  implementation presentationDependencies.supportCardView
+  implementation presentationDependencies.supportDesign
+  implementation presentationDependencies.supportAppCompat
+  implementation presentationDependencies.constraintlayout
+  implementation presentationDependencies.playServicesAuth
+  implementation presentationDependencies.billing
+
+  // Rx
+  implementation presentationDependencies.rxJava
+  implementation presentationDependencies.rxAndroid
+  implementation presentationDependencies.rxBinding
+  implementation presentationDependencies.rxRelay
+
+  // Dagger
+  kapt presentationDependencies.daggerCompiler
+  implementation presentationDependencies.daggerAndroidSupport
+  kapt presentationDependencies.daggerProcessor
+  implementation presentationDependencies.dagger
+
+  // Leakcanary
+  debugImplementation presentationDependencies.leakCanary
+  releaseImplementation presentationDependencies.leakCanaryNoOp
+
+  // Stetho
+  implementation presentationDependencies.stetho
+  implementation presentationDependencies.stethoOkHttp
+
+  // Retrofit
+  implementation presentationDependencies.retrofit
+  implementation presentationDependencies.retrofitConverter
+  implementation presentationDependencies.retrofitRxAdapter
+
+  // Room
+  implementation commonDependencies.room
+  implementation commonDependencies.roomRx
+  kapt commonDependencies.roomCompiler
+
+  // Firebase & co
+  implementation presentationDependencies.firebaseCore
+  implementation presentationDependencies.firebaseMessaging
+  implementation presentationDependencies.crashlytics
+
+  // Glide
+  implementation presentationDependencies.glide
+  kapt presentationDependencies.glideCompiler
+  implementation presentationDependencies.glideOkHttp
+
+  // Other
+  implementation commonDependencies.timber
+  implementation commonDependencies.gson
+  implementation presentationDependencies.okHttpLoggingInterceptor
+  implementation presentationDependencies.markwon
+
+  // Unit Testing
+  def testingDependencies = rootProject.ext.testingDependencies
+  testImplementation commonDependencies.kotlinStdLibrary
+  testImplementation testingDependencies.junit
+  testImplementation testingDependencies.mockito
+  testImplementation testingDependencies.kotlinTest
+}
+
+apply plugin: 'com.google.gms.google-services'

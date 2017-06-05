@@ -1,0 +1,11 @@
+apply plugin: 'kotlin'
+
+dependencies {
+  implementation project(':entities')
+  def domainDependencies = rootProject.ext.domainDependencies
+  def commonDependencies = rootProject.ext.commonDependencies
+
+  implementation commonDependencies.kotlinStdLibrary
+  implementation domainDependencies.rxJava
+  implementation domainDependencies.javaxInject
+}

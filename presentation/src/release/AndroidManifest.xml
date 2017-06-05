@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  >
+
+  <!--suppress AndroidDomInspection -->
+  <application
+    android:name="com.ravikumar.changelogmonitor.ProductionApplication"
+    tools:replace="android:name"/>
+
+</manifest>

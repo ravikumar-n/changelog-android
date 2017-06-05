@@ -1,0 +1,56 @@
+{
+  "repositories": [
+    {
+      "id": "9b43ad82-cf19-4f28-81af-16b687a3742b",
+      "name": "RxAndroid-2.0",
+      "description": "RxJava bindings for Android.",
+      "url": "https://github.com/ReactiveX/RxAndroid/tree/2.x",
+      "owner": "ReactiveX",
+      "tags": "java;reactive-streams;android",
+      "parsing_strategy": "MARKDOWN"
+    },
+    {
+      "id": "af5e35e5-754d-438a-9e4d-631eddb99576",
+      "name": "RxBinding-1.0",
+      "description": "RxJava binding APIs for Android's UI widgets.",
+      "url": "https://github.com/JakeWharton/RxBinding/tree/version-one",
+      "owner": "JakeWharton",
+      "tags": "java;reactive-streams;android",
+      "parsing_strategy": "MARKDOWN"
+    },
+    {
+      "id": "620465b7-00f5-4617-8215-b5d9212df0dc",
+      "name": "RxBinding-2.0",
+      "description": "RxJava binding APIs for Android's UI widgets.",
+      "url": "https://github.com/ReactiveX/RxAndroid/tree/2.x",
+      "owner": "JakeWharton",
+      "tags": "java;reactive-streams;android",
+      "parsing_strategy": "MARKDOWN"
+    },
+    {
+      "id": "366a3917-f96f-4088-bd72-11b9857e1eff",
+      "name": "RxJava-1.0",
+      "description": "RxJava – Reactive Extensions for the JVM – a library for composing asynchronous and event-based programs using observable sequences for the Java VM.",
+      "url": "https://github.com/ReactiveX/RxJava/tree/1.x",
+      "api_url": "https://api.github.com/repos/ReactiveX/RxJava/contents/CHANGES.md?ref=1.x",
+      "owner": "ReactiveX",
+      "tags": "java;reactive-streams;flow",
+      "parsing_strategy": "MARKDOWN"
+    },
+    {
+      "id": "87f26022-662c-4cb6-9ebf-afbf8018cd90",
+      "name": "RxJava-2.0",
+      "description": "RxJava – Reactive Extensions for the JVM – a library for composing asynchronous and event-based programs using observable sequences for the Java VM.",
+      "url": "https://github.com/ReactiveX/RxJava/tree/2.x",
+      "owner": "ReactiveX",
+      "tags": "java;reactive-streams;flow",
+      "parsing_strategy": "MARKDOWN"
+    }
+  ],
+  "meta": {
+    "total_pages": 3,
+    "current_page": 2,
+    "offset_index": 5,
+    "items_per_page": 5
+  }
+}

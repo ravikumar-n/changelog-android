@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:paddingLeft="@dimen/spacing_small"
+  android:paddingRight="@dimen/spacing_small"
+  >
+
+  <TextView
+    android:id="@+id/feedRepoTextView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:drawablePadding="@dimen/spacing_micro"
+    android:textAppearance="@style/FeedTitle"
+    app:layout_constraintBottom_toTopOf="@+id/feedVersionTextView"
+    app:layout_constraintStart_toStartOf="@+id/feedVersionTextView"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_chainStyle="spread_inside"
+    tools:text="@sample/repositories.json/repositories/name"
+    />
+
+  <TextView
+    android:id="@+id/feedVersionTextView"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="2dp"
+    android:ellipsize="end"
+    android:maxLines="1"
+    android:textAppearance="@style/FeedVersion"
+    app:layout_constraintBottom_toTopOf="@+id/feedDescriptionTextView"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/feedRepoTextView"
+    tools:text="@sample/changelog_detail.json/latest_version"
+    />
+
+  <TextView
+    android:id="@+id/feedDescriptionTextView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="@style/ListItemTextAppearance.Secondary"
+    app:layout_constraintBottom_toTopOf="@+id/viewDetailButton"
+    app:layout_constraintStart_toStartOf="@+id/feedVersionTextView"
+    app:layout_constraintTop_toBottomOf="@+id/feedVersionTextView"
+    tools:text="@sample/changelog_detail.json/latest_changelog"
+    />
+
+  <Button
+    android:id="@+id/viewDetailButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/view_detail"
+    android:textColor="@color/accent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    style="@style/Widget.AppCompat.Button.Borderless"
+    />
+</android.support.constraint.ConstraintLayout>

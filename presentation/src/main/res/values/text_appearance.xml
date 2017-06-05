@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="AppTheme.TextAppearance" parent="android:TextAppearance"/>
+
+  <style name="AppTheme.TextAppearance.Roboto">
+    <item name="android:fontFamily">@string/font_fontFamily_normal</item>
+  </style>
+
+  <style name="AppTheme.TextAppearance.Roboto.Bold">
+    <item name="android:textStyle">bold</item>
+  </style>
+
+  <style name="AppTheme.TextAppearance.RobotoLight">
+    <item name="android:fontFamily">@string/font_fontFamily_light</item>
+  </style>
+
+  <style name="AppTheme.TextAppearance.RobotoCondensed">
+    <item name="android:fontFamily">@string/font_fontFamily_condensed</item>
+  </style>
+
+  <style name="AppTheme.TextAppearance.RobotoMedium">
+    <item name="android:fontFamily">@string/font_fontFamily_medium</item>
+  </style>
+</resources>

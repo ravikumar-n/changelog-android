@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  package="com.ravikumar.changelogmonitor">
+
+  <!-- region Manifest Permission -->
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  <!-- endregion -->
+
+  <!-- region Application -->
+  <application
+    android:name=".ChangelogApplication"
+    android:allowBackup="true"
+    android:fullBackupContent="@xml/backup_descriptor"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    android:supportsRtl="false"
+    android:theme="@style/AppTheme"
+    tools:ignore="GoogleAppIndexingWarning">
+    <!-- region Activities -->
+    <activity
+      android:name=".features.onboarding.OnboardingActivity"
+      android:screenOrientation="portrait"
+      android:theme="@style/AppTheme.Onboarding"/>
+
+    <activity
+      android:name=".features.dashboard.DashboardActivity"
+      android:launchMode="singleTop"
+      android:screenOrientation="portrait"
+      android:theme="@style/AppTheme.Dashboard">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+
+    <activity
+      android:name=".features.watchlist.WatchlistActivity"
+      android:launchMode="singleInstance"
+      android:parentActivityName=".features.dashboard.DashboardActivity"
+      android:screenOrientation="portrait"
+      android:theme="@style/AppTheme.Translucent"/>
+
+    <activity
+      android:name=".features.changelogdetail.ChangelogDetailActivity"
+      android:label="@string/title_changelog_detail"
+      android:parentActivityName=".features.dashboard.DashboardActivity"
+      android:screenOrientation="portrait"
+      android:theme="@style/AppTheme.Translucent">
+      <meta-data
+        android:name="android.support.PARENT_ACTIVITY"
+        android:value=".features.dashboard.DashboardActivity"/>
+    </activity>
+
+    <activity
+      android:name=".features.subscriptions.SubscriptionActivity"
+      android:label="@string/title_subscription"
+      android:parentActivityName=".features.dashboard.DashboardActivity"
+      android:screenOrientation="portrait"
+      android:theme="@style/AppTheme.Translucent"/>
+    <!-- endregion -->
+
+    <!-- region Push notification -->
+    <service
+      android:name=".features.notification.NotificationListener"
+      android:exported="true"
+      >
+      <intent-filter>
+        <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+      </intent-filter>
+    </service>
+
+    <meta-data
+      android:name="com.google.firebase.messaging.default_notification_icon"
+      android:resource="@drawable/ic_notification"/>
+
+    <meta-data
+      android:name="com.google.firebase.messaging.default_notification_color"
+      android:resource="@color/primary"/>
+
+    <service
+      android:name=".features.notification.ChangelogFirebaseInstanceIdService"
+      android:exported="false">
+      <intent-filter>
+        <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+      </intent-filter>
+    </service>
+    <!-- endregion -->
+
+    <!-- region Firebase Crashlytics -->
+    <meta-data
+      android:name="firebase_crashlytics_collection_enabled"
+      android:value="false"/>
+    <!-- endregion -->
+  </application>
+  <!-- endregion -->
+</manifest>

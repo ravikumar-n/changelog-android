@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- region Settings -->
+  <string name="cd_auto_daynight">Auto DayNight theme image</string>
+  <string name="cd_night">Night theme image</string>
+  <string name="cd_analytics">Analytics image</string>
+  <string name="cd_share">Share image</string>
+  <string name="cd_review">Play store review image</string>
+  <string name="cd_user_feedback">User feedback image</string>
+  <string name="cd_twitter">Twitter image</string>
+  <string name="cd_version">Version image</string>
+  <!-- endregion -->
+
+  <!-- region Info -->
+  <string name="cd_avatar">User avatar</string>
+  <string name="cd_info_bg">Info screen background</string>
+  <!-- endregion -->
+
+  <!-- region Subscription -->
+  <string name="cd_half_yearly">Half yearly subscription</string>
+  <string name="cd_yearly">Yearly subscription</string>
+  <!-- endregion -->
+
+  <!-- region Others -->
+  <string name="cd_onboarding">Onboarding screen image</string>
+  <string name="cd_check">Selected watchlist item image</string>
+  <!-- endregion -->
+</resources>

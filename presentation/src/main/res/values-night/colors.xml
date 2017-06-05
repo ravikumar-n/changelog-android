@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="primary">#670BF4</color>
+  <color name="primaryDark">#401048</color>
+  <color name="accent">#9575CD</color>
+  <color name="primaryText">#FFFFF0</color>
+  <color name="secondaryText">#F5F5F5</color>
+  <color name="windowBackground">#1F1F1F</color>
+
+  <color name="colorControlNormal">#FFF</color>
+  <color name="colorControlActivated">#FFF</color>
+
+  <color name="iconTint">#F0FFFF</color>
+
+  <!-- region repo -->
+  <color name="repoItem">#1F1F1F</color>
+  <color name="repoItemSelected">#26FFFFFF</color>
+  <!-- endregion -->
+
+  <!-- region Feed -->
+  <color name="mdBackground">#1F1F1F</color>
+  <color name="feedTitle">#797979</color>
+  <!-- endregion -->
+</resources>

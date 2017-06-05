@@ -1,0 +1,32 @@
+<resources>
+  <dimen name="padding_normal">16dp</dimen>
+  <dimen name="padding_small">8dp</dimen>
+  <dimen name="keyline_1">72dp</dimen>
+
+  <!-- Spacing -->
+  <dimen name="spacing_micro">4dp</dimen>
+  <dimen name="spacing_small">8dp</dimen>
+  <dimen name="spacing_medium">16dp</dimen>
+  <dimen name="spacing_large">32dp</dimen>
+  <dimen name="spacing_xlarge">48dp</dimen>
+  <dimen name="spacing_huge">64dp</dimen>
+
+  <!-- Text Size -->
+  <dimen name="text_size_small">12sp</dimen>
+  <dimen name="text_size_xsmall">10sp</dimen>
+  <dimen name="text_size_medium">14sp</dimen>
+  <dimen name="text_size_xmedium">16sp</dimen>
+  <dimen name="text_size_large">18sp</dimen>
+  <dimen name="text_size_xlarge">20sp</dimen>
+  <dimen name="text_size_title">34sp</dimen>
+
+  <!-- Fab -->
+  <dimen name="fab_margin">16dp</dimen>
+
+  <dimen name="recyclerview_bottom_padding">72dp</dimen>
+
+  <dimen name="info_profile_height">300dp</dimen>
+
+  <dimen name="user_avatar">96dp</dimen>
+  <dimen name="onboarding_image_dimension">256dp</dimen>
+</resources>

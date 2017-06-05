@@ -1,0 +1,55 @@
+{
+  "repositories": [
+    {
+      "id": "8e10bcf7-1ac6-46a4-95a4-4bbfe2d7e009",
+      "name": "RxAndroid-1.0",
+      "description": "RxJava bindings for Android.",
+      "url": "https://github.com/ReactiveX/RxAndroid/tree/1.x",
+      "owner": "ReactiveX",
+      "tags": "java;reactive-streams;android",
+      "parsing_strategy": "MARKDOWN"
+    },
+    {
+      "id": "b23c015b-02bc-489d-91fe-b40cca3fc3c0",
+      "name": "RxAndroid-2.0",
+      "description": "RxJava bindings for Android.",
+      "url": "https://github.com/ReactiveX/RxAndroid/tree/2.x",
+      "owner": "ReactiveX",
+      "tags": "java;reactive-streams;android",
+      "parsing_strategy": "MARKDOWN"
+    },
+    {
+      "id": "b75ef311-ea0c-4ae4-aaeb-10463ec16b12",
+      "name": "RxBinding-1.0",
+      "description": "RxJava binding APIs for Android's UI widgets.",
+      "url": "https://github.com/JakeWharton/RxBinding/tree/version-one",
+      "owner": "JakeWharton",
+      "tags": "java;reactive-streams;android",
+      "parsing_strategy": "MARKDOWN"
+    },
+    {
+      "id": "b04986ea-0835-4138-bbee-85bf2a98077a",
+      "name": "RxBinding-2.0",
+      "description": "RxJava binding APIs for Android's UI widgets.",
+      "url": "https://github.com/ReactiveX/RxAndroid/tree/2.x",
+      "owner": "JakeWharton",
+      "tags": "java;reactive-streams;android",
+      "parsing_strategy": "MARKDOWN"
+    },
+    {
+      "id": "8397201b-cb4a-415e-8aa4-6f3a438e7a8a",
+      "name": "RxJava-1.0",
+      "description": "RxJava – Reactive Extensions for the JVM – a library for composing asynchronous and event-based programs using observable sequences for the Java VM.",
+      "url": "https://github.com/ReactiveX/RxJava/tree/1.x",
+      "owner": "ReactiveX",
+      "tags": "java;reactive-streams;flow",
+      "parsing_strategy": "MARKDOWN"
+    }
+  ],
+  "meta": {
+    "total_pages": 3,
+    "current_page": 2,
+    "offset_index": 5,
+    "items_per_page": 5
+  }
+}

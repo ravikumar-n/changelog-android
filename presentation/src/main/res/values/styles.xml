@@ -1,0 +1,268 @@
+<resources>
+
+  <!-- region Application theme -->
+  <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+    <item name="colorPrimary">@color/primary</item>
+    <item name="colorPrimaryDark">@color/primaryDark</item>
+    <item name="colorAccent">@color/accent</item>
+    <item name="android:windowBackground">@color/windowBackground</item>
+
+    <item name="android:colorControlNormal">@color/colorControlNormal</item>
+    <item name="android:colorControlActivated">@color/colorControlActivated</item>
+  </style>
+
+  <style name="AppTheme.Dashboard">
+    <item name="android:statusBarColor">@color/primary</item>
+  </style>
+
+  <style name="AppTheme.Translucent">
+    <item name="android:windowTranslucentStatus">true</item>
+    <item name="windowActionBarOverlay">false</item>
+  </style>
+
+  <style name="AppTheme.Onboarding">
+    <item name="android:windowFullscreen">true</item>
+    <item name="android:windowContentOverlay">@null</item>
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+  </style>
+
+  <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+  <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+  <!-- endregion -->
+
+  <!-- region Toolbar -->
+  <style name="Widget.Changelog" parent="android:Widget"/>
+
+  <style name="Widget.Changelog.Toolbar">
+    <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark</item>
+    <item name="android:background">@color/primary</item>
+  </style>
+  <!-- endregion -->
+
+  <!-- region TextView styling -->
+  <style name="ProgressTextView" parent="android:Widget.TextView">
+    <item name="android:textSize">@dimen/text_size_large</item>
+    <item name="android:textColor">@color/secondaryText</item>
+    <item name="android:textAppearance">@style/AppTheme.TextAppearance.RobotoCondensed</item>
+  </style>
+
+  <style name="EmptyTextView" parent="android:Widget.TextView">
+    <item name="android:fontFamily">@string/font_fontFamily_condensed</item>
+    <item name="android:textColor">@color/secondaryText</item>
+    <item name="android:textSize">@dimen/text_size_large</item>
+    <item name="android:padding">@dimen/padding_normal</item>
+  </style>
+
+  <style name="ErrorTextView" parent="android:Widget.TextView">
+    <item name="android:fontFamily">@string/font_fontFamily_condensed</item>
+    <item name="android:textColor">@color/secondaryText</item>
+    <item name="android:textSize">@dimen/text_size_large</item>
+    <item name="android:padding">@dimen/padding_normal</item>
+  </style>
+  <!-- endregion -->
+
+  <!-- region List item text appearance -->
+  <style name="ListItemTextAppearance"/>
+
+  <style name="ListItemTextAppearance.Primary" parent="AppTheme.TextAppearance.RobotoMedium">
+    <item name="android:textColor">@color/primaryText</item>
+    <item name="android:textSize">@dimen/text_size_xmedium</item>
+  </style>
+
+  <style name="ListItemTextAppearance.Primary.Small" parent="AppTheme.TextAppearance.Roboto">
+    <item name="android:textColor">@color/primaryText</item>
+    <item name="android:textSize">@dimen/text_size_medium</item>
+  </style>
+
+  <style name="ListItemTextAppearance.Secondary">
+    <item name="android:textColor">@color/secondaryText</item>
+    <item name="android:textSize">@dimen/text_size_medium</item>
+  </style>
+
+  <style name="ListItemTextAppearance.Secondary.Small">
+    <item name="android:textSize">@dimen/text_size_small</item>
+  </style>
+  <!-- endregion -->
+
+  <!-- region Progress dialog -->
+  <style name="ProgressTextStyle">
+    <item name="android:textSize">@dimen/text_size_large</item>
+    <item name="android:textColor">@color/secondaryText</item>
+    <item name="android:textAppearance">@style/AppTheme.TextAppearance.RobotoCondensed</item>
+  </style>
+  <!-- endregion -->
+
+  <!-- region AlertDialog -->
+  <style name="ChangelogAlertDialog" parent="Theme.AppCompat.Light.Dialog">
+    <item name="colorAccent">@color/accent</item>
+    <!-- Used for the title and text -->
+    <item name="android:textColorPrimary">@color/primaryText</item>
+
+    <!-- Used for the background -->
+    <item name="android:background">@color/white_40</item>
+    <!-- Title appearance -->
+    <item name="android:windowTitleStyle">@style/AlertDialogTitleTextStyle</item>
+
+    <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
+    <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
+  </style>
+
+  <style name="AlertDialogTitleTextStyle">
+    <item name="android:textColor">@android:color/black</item>
+    <item name="android:textAppearance">@style/TextAppearance.AppCompat.Title</item>
+  </style>
+
+  <style name="AlertDialogMessageTextStyle">
+    <item name="android:textColor">@android:color/black</item>
+    <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body1</item>
+  </style>
+  <!-- endregion -->
+
+  <!-- region Preferences-->
+  <style name="Preferences">
+    <item name="android:textSize">@dimen/text_size_medium</item>
+    <item name="android:textColor">@color/primaryText</item>
+    <item name="android:padding">@dimen/padding_normal</item>
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_gravity">center_horizontal</item>
+    <item name="android:gravity">center_vertical</item>
+  </style>
+  <!-- endregion -->
+
+  <!-- region Feed -->
+  <style name="FeedTitle" parent="AppTheme.TextAppearance.RobotoCondensed">
+    <item name="android:textColor">@color/feedTitle</item>
+    <item name="android:textSize">@dimen/text_size_xmedium</item>
+  </style>
+
+  <style name="FeedVersion" parent="AppTheme.TextAppearance.RobotoMedium">
+    <item name="android:textColor">@color/primaryText</item>
+    <item name="android:textSize">@dimen/text_size_medium</item>
+  </style>
+  <!-- endregion -->
+
+  <!-- region Subscription -->
+  <style name="Subscription"/>
+
+  <style name="Subscription.Text" parent="android:Widget.TextView"/>
+
+  <style name="Subscription.Text.Primary">
+    <item name="android:layout_width">0dp</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:textAppearance">@style/AppTheme.TextAppearance.RobotoCondensed</item>
+    <item name="android:textColor">@android:color/black</item>
+    <item name="android:textSize">@dimen/text_size_xlarge</item>
+    <item name="android:gravity">left</item>
+    <item name="android:textAllCaps">true</item>
+    <item name="android:layout_marginLeft">@dimen/spacing_medium</item>
+    <item name="android:layout_marginRight">@dimen/spacing_medium</item>
+  </style>
+
+  <style name="Subscription.Text.Secondary">
+    <item name="android:layout_width">0dp</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:textAppearance">@style/AppTheme.TextAppearance.RobotoLight</item>
+    <item name="android:textColor">#636363</item>
+    <item name="android:textSize">@dimen/text_size_medium</item>
+    <item name="android:lineSpacingExtra">4sp</item>
+    <item name="android:gravity">left</item>
+    <item name="android:layout_marginLeft">@dimen/spacing_medium</item>
+    <item name="android:layout_marginRight">@dimen/spacing_medium</item>
+  </style>
+
+  <style name="Subscription.Card" parent="CardView">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="cardCornerRadius">@dimen/spacing_small</item>
+    <item name="android:layout_marginLeft">@dimen/spacing_large</item>
+    <item name="android:layout_marginRight">@dimen/spacing_large</item>
+    <item name="android:layout_marginTop">@dimen/spacing_medium</item>
+    <item name="android:paddingTop">@dimen/spacing_micro</item>
+    <item name="android:paddingBottom">@dimen/spacing_micro</item>
+    <item name="android:minHeight">112dp</item>
+    <item name="android:background">@color/white</item>
+  </style>
+  <!-- endregion -->
+
+  <!-- region Settings -->
+  <style name="Settings"/>
+
+  <style name="Settings.Text" parent="android:Widget.TextView"/>
+
+  <style name="Settings.Text.Section">
+    <item name="android:textAppearance">@style/AppTheme.TextAppearance.RobotoMedium</item>
+    <item name="android:textColor">@color/accent</item>
+    <item name="android:textSize">@dimen/text_size_xmedium</item>
+    <item name="android:layout_marginTop">@dimen/spacing_small</item>
+    <item name="android:layout_marginLeft">@dimen/spacing_small</item>
+  </style>
+
+  <style name="Settings.Text.Primary">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:textAppearance">@style/AppTheme.TextAppearance.Roboto</item>
+    <item name="android:textColor">@color/primaryText</item>
+    <item name="android:textSize">@dimen/text_size_xmedium</item>
+    <item name="android:gravity">left</item>
+    <item name="android:layout_marginLeft">@dimen/spacing_medium</item>
+  </style>
+
+  <style name="Settings.Text.Secondary">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:textAppearance">@style/AppTheme.TextAppearance.RobotoLight</item>
+    <item name="android:textColor">@color/secondaryText</item>
+    <item name="android:textSize">@dimen/text_size_medium</item>
+    <item name="android:gravity">left</item>
+    <item name="android:lineSpacingMultiplier">1.1</item>
+    <item name="android:layout_marginTop">@dimen/spacing_micro</item>
+    <item name="android:layout_marginLeft">@dimen/spacing_medium</item>
+  </style>
+
+  <style name="Settings.Container">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:paddingLeft">@dimen/padding_normal</item>
+    <item name="android:paddingRight">@dimen/padding_normal</item>
+    <item name="android:paddingTop">@dimen/spacing_small</item>
+    <item name="android:paddingBottom">@dimen/spacing_small</item>
+    <item name="android:background">?android:attr/selectableItemBackground</item>
+    <item name="android:focusable">true</item>
+    <item name="android:clickable">true</item>
+    <item name="android:descendantFocusability">blocksDescendants</item>
+  </style>
+
+  <style name="Settings.Image">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_alignParentLeft">true</item>
+    <item name="android:layout_centerVertical">true</item>
+    <item name="android:scaleType">fitXY</item>
+    <item name="android:tint">@color/iconTint</item>
+  </style>
+
+  <style name="Settings.CheckBox" parent="Widget.AppCompat.CompoundButton.CheckBox">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_alignParentRight">true</item>
+    <item name="android:layout_centerVertical">true</item>
+    <item name="android:layout_marginLeft">@dimen/spacing_medium</item>
+    <item name="android:focusable">false</item>
+    <item name="android:clickable">false</item>
+    <item name="android:focusableInTouchMode">false</item>
+    <item name="android:background">@android:color/transparent</item>
+  </style>
+
+  <style name="Settings.Divider">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">1dp</item>
+    <item name="android:layout_marginTop">@dimen/spacing_micro</item>
+    <item name="android:layout_marginBottom">@dimen/spacing_micro</item>
+    <item name="android:background">@color/divider</item>
+  </style>
+
+  <!-- endregion -->
+</resources>

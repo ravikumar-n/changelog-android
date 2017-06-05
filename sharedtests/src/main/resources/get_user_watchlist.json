@@ -1,0 +1,31 @@
+{
+  "items": [
+    {
+      "id": "020f5232-11af-430e-a592-2c3aceef85c2",
+      "name": "Butterknife",
+      "description": "Bind Android views and callbacks to fields and methods.",
+      "url": "https://github.com/JakeWharton/butterknife",
+      "owner": "JakeWharton",
+      "tags": "android;java;xml",
+      "parsing_strategy": "MARKDOWN"
+    },
+    {
+      "id": "c410dfdf-c992-429b-b154-853946772641",
+      "name": "Wire",
+      "description": "Clean, lightweight protocol buffers for Android and Java.",
+      "url": "https://github.com/square/wire",
+      "owner": "Square",
+      "tags": "java;protocol buffers;android",
+      "parsing_strategy": "MARKDOWN"
+    },
+    {
+      "id": "2e3df445-f8ee-40e3-8c99-279218b0a9d0",
+      "name": "ChangeLog Test",
+      "description": "Purely for testing production environment for app notifications. DO NOT SUBSCRIBE!",
+      "url": "https://github.com/ravikumar-n/changelog-test",
+      "owner": "Ravikumar",
+      "tags": "testing;",
+      "parsing_strategy": "MARKDOWN"
+    }
+  ]
+}

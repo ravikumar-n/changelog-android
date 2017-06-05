@@ -1,0 +1,57 @@
+{
+  "changelogs": [
+    {
+      "repo_id": "020f5232-11af-430e-a592-2c3aceef85c2",
+      "latest_version": "Version 8.8.1 *(2017-08-09)*",
+      "latest_changelog": "* Fix: Properly emit casts for single-bound view subtypes when `butterknife.debuggable` is set to `false`.",
+      "sha": "a61b410e0ee201240a21729991fd3c33cb9857fc",
+      "created_at": "Nov 6, 2017 10:27:35 PM",
+      "updated_at": "Nov 6, 2017 10:27:35 PM"
+    },
+    {
+      "repo_id": "c410dfdf-c992-429b-b154-853946772641",
+      "latest_version": "Version 2.2.0 *(2016-06-17)*",
+      "latest_changelog": "* New: Support for `map` type in the schema, compiler, and runtime! * New: `AndroidMessage` base class consolidates everything required for supporting Android and will   now be used for generating code with `--android`. * New: `stream` keyword in RPC definitions is now parsed and exposed in the schema. * Fix: Nested types which are retained no longer cause their enclosing type to be retained. Instead,   non-instantiable empty types will be generated for pruned enclosing types. * Fix: Remove per-type `Parcelable.Creator` classes and instead use a single type which delegates   to the message's `ProtoAdapter`. * Fix: Retain information on redacted fields even when options were pruned. * Fix: Do not generate code for handling `null` from list types (and now map types) which are   guaranteed to never be `null`.",
+      "sha": "a1e563ebaeeb405fbc4d5e7f7221c7ea8815bc76",
+      "created_at": "Nov 6, 2017 10:27:38 PM",
+      "updated_at": "Nov 6, 2017 10:27:38 PM"
+    },
+    {
+      "repo_id": "2e3df445-f8ee-40e3-8c99-279218b0a9d0",
+      "latest_version": "Version 0.0.6 (27-Nov-2017)",
+      "latest_changelog": "* Question to Myself: My friends went for a trip, here I'm fixing bugs on weekend, will I ever release this app?.",
+      "sha": "af5fad3e998e6dc5deed2308d176dbb588df5acc",
+      "created_at": "Nov 6, 2017 10:27:35 PM",
+      "updated_at": "Nov 26, 2017 7:46:01 PM"
+    }
+  ],
+  "repositories": [
+    {
+      "id": "020f5232-11af-430e-a592-2c3aceef85c2",
+      "name": "Butterknife",
+      "description": "Bind Android views and callbacks to fields and methods.",
+      "url": "https://github.com/JakeWharton/butterknife",
+      "owner": "JakeWharton",
+      "tags": "android;java;xml",
+      "parsing_strategy": "MARKDOWN"
+    },
+    {
+      "id": "c410dfdf-c992-429b-b154-853946772641",
+      "name": "Wire",
+      "description": "Clean, lightweight protocol buffers for Android and Java.",
+      "url": "https://github.com/square/wire",
+      "owner": "Square",
+      "tags": "java;protocol buffers;android",
+      "parsing_strategy": "MARKDOWN"
+    },
+    {
+      "id": "2e3df445-f8ee-40e3-8c99-279218b0a9d0",
+      "name": "ChangeLog Test",
+      "description": "Purely for testing production environment for app notifications. DO NOT SUBSCRIBE!",
+      "url": "https://github.com/ravikumar-n/changelog-test",
+      "owner": "Ravikumar",
+      "tags": "testing;",
+      "parsing_strategy": "MARKDOWN"
+    }
+  ]
+}

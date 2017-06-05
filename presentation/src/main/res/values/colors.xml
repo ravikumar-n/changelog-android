@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="primary">#670BF4</color>
+  <color name="primaryDark">#401048</color>
+  <color name="accent">#4A2A9E</color>
+  <color name="primaryText">#393939</color>
+  <color name="secondaryText">#757575</color>
+  <color name="divider">#360087ff</color>
+  <color name="windowBackground">#FFF</color>
+
+  <color name="colorControlNormal">#000</color>
+  <color name="colorControlActivated">#000</color>
+  <color name="iconTint">#010</color>
+
+  <color name="white">#FFF</color>
+  <color name="white_40">#64FFFFFF</color>
+  <color name="green">#06FF4C</color>
+
+  <color name="tagTextColor">#96D1FD</color>
+
+  <!-- region repo -->
+  <color name="repoItem">#64FFFFFF</color>
+  <color name="repoItemSelected">#26000000</color>
+  <!-- endregion -->
+
+  <!-- region Feed -->
+  <color name="mdBackground">#FAFBFC</color>
+  <color name="feedTitle">#2079C7</color>
+  <!-- endregion -->
+
+  <!-- region Subscription -->
+  <color name="subscription">#D8FFFFFF</color>
+  <color name="subscriptionSelected">#FFFFFF</color>
+  <!-- endregion -->
+
+  <!-- region Onboarding -->
+  <color name="onboardingTextColor">#FFF</color>
+  <color name="indicatorUnSelected">#F5F2F2</color>
+  <color name="indicatorSelected">#039BE5</color>
+  <!-- endregion -->
+</resources>

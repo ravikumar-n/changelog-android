@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <declare-styleable name="InkPageIndicator">
+    <attr format="dimension" name="dotDiameter"/>
+    <attr format="dimension" name="dotGap"/>
+    <attr format="integer" name="animationDuration"/>
+    <attr format="color" name="pageIndicatorColor"/>
+    <attr format="color" name="currentPageIndicatorColor"/>
+  </declare-styleable>
+</resources>
+

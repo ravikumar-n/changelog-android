@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  tools:context=".features.dashboard.DashboardActivity"
+  >
+  <item
+    android:id="@+id/upgrade"
+    android:title="@string/upgrade"
+    app:showAsAction="always"
+    tools:ignore="AlwaysShowAction"/>
+
+  <item
+    android:id="@+id/logout"
+    android:title="@string/logout"
+    app:showAsAction="never"/>
+</menu>
