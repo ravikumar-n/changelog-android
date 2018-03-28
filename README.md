@@ -23,7 +23,7 @@ Currently the app supports 55 widely used libraries. As a free user you can subs
  - Run `detektCheck` task before giving PR. (see: [detekt](https://github.com/arturbosch/detekt))
 
 ### Project Members
- - Designer - [Ahila Pillai](https://dribbble.com/AhilaPillai)
+ - Designer - [Ahila Pillai](http://www.ahilapillai.com/) (**Available for Hire**)
  - Developer - [Ravikumar N](https://twitter.com/HappyRavi) (**[Available for Hire](https://www.linkedin.com/in/ravikumar89)**)
  
 ### Acknowledgments
