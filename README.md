@@ -24,7 +24,7 @@ Currently the app supports 55 widely used libraries. As a free user you can subs
 
 ### Project Members
  - Designer - [Ahila Pillai](https://dribbble.com/AhilaPillai)
- - Developer - [Ravikumar N](https://twitter.com/HappyRavi) 
+ - Developer - [Ravikumar N](https://twitter.com/HappyRavi) (**[Available for Hire](https://www.linkedin.com/in/ravikumar89)**)
  
 ### Acknowledgments
  - [Fernando Cejas](https://twitter.com/fernando_cejas) for his awesome work on [Clean Architecture Kotlin](https://github.com/android10/Android-CleanArchitecture-Kotlin/commits/master).
