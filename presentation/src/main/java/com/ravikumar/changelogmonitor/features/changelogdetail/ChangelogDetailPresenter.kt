@@ -57,17 +57,17 @@ class ChangelogDetailPresenter<V : ChangelogDetailContract.View>
   // endregion
 
   // region Observer
-  private inner class RepoObserver : UseCaseObserver.RxMaybe<Repository>() {
+  internal inner class RepoObserver : UseCaseObserver.RxMaybe<Repository>() {
     override fun onSuccess(value: Repository) {
       view?.showRepository(value)
     }
 
     override fun onError(e: Throwable) {
-      Timber.e("No repository present locally")
+      Timber.e(e, "No repository present locally")
     }
   }
 
-  private inner class ChangelogDetailObserver : UseCaseObserver.RxFlowable<ChangelogDetail>() {
+  inner class ChangelogDetailObserver : UseCaseObserver.RxFlowable<ChangelogDetail>() {
     override fun onNext(value: ChangelogDetail) {
       view?.hideLoading()
       if (value.changelog.isEmpty()) {

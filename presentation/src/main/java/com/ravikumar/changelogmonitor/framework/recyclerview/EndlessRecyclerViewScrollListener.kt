@@ -8,34 +8,16 @@ import android.support.v7.widget.StaggeredGridLayoutManager
 /**
  * See: https://gist.github.com/nesquena/d09dc68ff07e845cc622
  */
-abstract class EndlessRecyclerViewScrollListener : RecyclerView.OnScrollListener {
-  // The minimum amount of items to have below your current scroll position
-  // before loading more.
-  private var visibleThreshold = 5
+
+abstract class EndlessRecyclerViewScrollListener(layoutManager: LinearLayoutManager) : RecyclerView.OnScrollListener() {
   // The current offset index of data you have loaded
   private var currentPage = 0
   // The total number of items in the dataset after the last load
   private var previousTotalItemCount = 0
   // True if we are still waiting for the last set of data to load.
   private var loading = true
-  // Sets the starting page index
-  private val startingPageIndex = 0
 
-  private var mLayoutManager: RecyclerView.LayoutManager
-
-  constructor(layoutManager: LinearLayoutManager) {
-    this.mLayoutManager = layoutManager
-  }
-
-  constructor(layoutManager: GridLayoutManager) {
-    this.mLayoutManager = layoutManager
-    visibleThreshold *= layoutManager.spanCount
-  }
-
-  constructor(layoutManager: StaggeredGridLayoutManager) {
-    this.mLayoutManager = layoutManager
-    visibleThreshold *= layoutManager.spanCount
-  }
+  private var mLayoutManager: RecyclerView.LayoutManager = layoutManager
 
   private fun getLastVisibleItem(lastVisibleItemPositions: IntArray): Int {
     var maxSize = 0
@@ -89,7 +71,7 @@ abstract class EndlessRecyclerViewScrollListener : RecyclerView.OnScrollListener
     // If the total item count is zero and the previous isn't, assume the
     // list is invalidated and should be reset back to initial state
     if (totalItemCount < previousTotalItemCount) {
-      this.currentPage = this.startingPageIndex
+      this.currentPage = STARTING_PAGE_INDEX
       this.previousTotalItemCount = totalItemCount
       if (totalItemCount == 0) {
         this.loading = true
@@ -107,7 +89,7 @@ abstract class EndlessRecyclerViewScrollListener : RecyclerView.OnScrollListener
     // the visibleThreshold and need to reload more data.
     // If we do need to reload some more data, we execute onLoadMore to fetch the data.
     // threshold should reflect how many total columns there are too
-    if (!loading && lastVisibleItemPosition + visibleThreshold > totalItemCount) {
+    if (!loading && lastVisibleItemPosition + VISIBLE_THRESHOLD > totalItemCount) {
       currentPage++
       onLoadMore(currentPage, totalItemCount, view!!)
       loading = true
@@ -116,7 +98,7 @@ abstract class EndlessRecyclerViewScrollListener : RecyclerView.OnScrollListener
 
   // Call this method whenever performing new searches
   fun resetState() {
-    this.currentPage = this.startingPageIndex
+    this.currentPage = STARTING_PAGE_INDEX
     this.previousTotalItemCount = 0
     this.loading = true
   }
@@ -128,4 +110,12 @@ abstract class EndlessRecyclerViewScrollListener : RecyclerView.OnScrollListener
     view: RecyclerView
   )
 
+  companion object {
+    // The minimum amount of items to have below your current scroll position
+    // before loading more.
+    private const val VISIBLE_THRESHOLD = 5
+
+    // Sets the starting page index
+    private const val STARTING_PAGE_INDEX = 0
+  }
 }

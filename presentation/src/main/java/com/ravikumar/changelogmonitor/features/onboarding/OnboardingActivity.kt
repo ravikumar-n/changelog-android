@@ -244,7 +244,7 @@ class OnboardingActivity : DaggerAppCompatActivity(), OnboardingContract.View,
         // the correct page and that the View in question
         // isn't null.
         headerImage?.alpha = 1.0f - absPosition
-        headerImage?.translationX = -pageWidthTimesPosition * 1.5f
+        headerImage?.translationX = -pageWidthTimesPosition * X_SCALING_FACTOR
 
         // Finally, it can be useful to know the direction
         // of the user's swipe - if we're entering or exiting.
@@ -271,6 +271,7 @@ class OnboardingActivity : DaggerAppCompatActivity(), OnboardingContract.View,
 
     // region Constants
     private const val RC_SIGN_IN = 9001
+    private const val X_SCALING_FACTOR = 1.5f
     // endregion
   }
   // endregion

@@ -24,7 +24,10 @@ class WatchlistPresenter<V : WatchlistContract.View>
 
   // region Init
   init {
-    disposable.add(repositoriesUseCase.disposables)
+    disposable.addAll(
+      repositoriesUseCase.disposables,
+      saveWatchlistUseCase.disposables
+    )
   }
   // endregion
 

@@ -20,8 +20,8 @@ ext {
   KEYSTORE_KEY_PASSWORD = keystoreProperties['keyPassword']
 
   // Compile Dependencies
-  kotlinVersion = "1.2.30"
-  gradleVersion = "3.1.0-rc03"
+  kotlinVersion = "1.2.31"
+  gradleVersion = "3.1.0"
   googleServicesVersion = "3.1.2"
   versionsPluginVersion = "0.17.0"
   crashlyticsPluginVersion = "1.25.1"

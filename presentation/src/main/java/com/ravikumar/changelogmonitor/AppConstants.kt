@@ -2,6 +2,7 @@ package com.ravikumar.changelogmonitor
 
 // region Common
 const val APP_PLAYSTORE_URI = "market://details?id=com.ravikumar.changelogmonitor"
+const val DATABASE_NAME = "changelog"
 // endregion
 
 // region Subscription SKU

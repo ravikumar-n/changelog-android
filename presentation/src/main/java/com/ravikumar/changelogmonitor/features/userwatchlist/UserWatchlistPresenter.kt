@@ -6,7 +6,6 @@ import com.ravikumar.domain.UseCaseObserver
 import com.ravikumar.domain.usecases.user.GetUserUseCase
 import com.ravikumar.domain.usecases.watchlist.GetWatchListUseCase
 import com.ravikumar.entities.Repository
-import com.ravikumar.entities.User
 import timber.log.Timber
 import javax.inject.Inject
 

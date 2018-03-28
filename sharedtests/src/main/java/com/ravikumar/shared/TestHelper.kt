@@ -4,8 +4,10 @@ import android.content.Context
 import com.ravikumar.entities.AddWatchlist
 import com.ravikumar.entities.ChangelogDetail
 import com.ravikumar.entities.ChangelogResponse
+import com.ravikumar.entities.ChangelogSubscription
 import com.ravikumar.entities.DeviceInfo
 import com.ravikumar.entities.Repositories
+import com.ravikumar.entities.SubscriptionResponse
 import com.ravikumar.entities.User
 import com.ravikumar.entities.UserResponse
 import com.ravikumar.entities.Watchlist
@@ -24,12 +26,14 @@ class TestHelper @JvmOverloads constructor(context: Context? = null) {
 
   fun getFakeUser() = User(
     id = UUID.fromString("f000aa01-0451-4000-b000-000000000000"),
-    name = "Arya Stark"
+    name = "Arya Stark",
+    emailId = "arya@winterfell.com"
   )
 
   fun getFakeProUser() = User(
     id = UUID.fromString("f000aa01-0451-4000-b000-000000000000"),
     name = "Arya Stark",
+    emailId = "arya@winterfell.com",
     subscriptionId = UUID.fromString("f000aa01-0451-4000-b000-000000000000")
   )
 
@@ -70,5 +74,14 @@ class TestHelper @JvmOverloads constructor(context: Context? = null) {
   fun getFakeDeviceInfo(): DeviceInfo {
     val stream = classLoader.getResourceAsStream("device.json")
     return ChangelogJsonParser(stream).parseTo(DeviceInfo::class.java)
+  }
+
+  fun getFakeSubscription(): ChangelogSubscription {
+    return getFakeSubscriptionResponse().subscription
+  }
+
+  fun getFakeSubscriptionResponse(): SubscriptionResponse {
+    val stream = classLoader.getResourceAsStream("subscription.json")
+    return ChangelogJsonParser(stream).parseTo(SubscriptionResponse::class.java)
   }
 }

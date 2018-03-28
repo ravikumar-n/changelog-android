@@ -14,7 +14,6 @@ import io.reactivex.disposables.CompositeDisposable
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.mockito.ArgumentMatchers
 import org.mockito.ArgumentMatchers.anyInt
 import org.mockito.ArgumentMatchers.anyList
 import org.mockito.Mock
@@ -31,6 +30,7 @@ class WatchlistPresenterTest {
   @Before
   fun setUp() {
     given { repositoriesUseCase.disposables }.willReturn(CompositeDisposable())
+    given { saveWatchlistUseCase.disposables }.willReturn(CompositeDisposable())
 
     presenter = WatchlistPresenter(repositoriesUseCase, saveWatchlistUseCase)
     presenter.onAttach(view)
@@ -67,7 +67,7 @@ class WatchlistPresenterTest {
     observer.onNext(Repositories(emptyList(), emptyMeta()))
     observer.onComplete()
 
-    verify(view).showEmptyState(any(), textRes = ArgumentMatchers.anyInt())
+    verify(view).showEmptyState(drawableRes = anyInt(), textRes = any())
   }
 
   @Test
@@ -79,7 +79,7 @@ class WatchlistPresenterTest {
     verify(repositoriesUseCase).execute(captor.capture(), any())
 
     captor.firstValue.onError(NullPointerException())
-    verify(view).showErrorState(any(), textRes = any())
+    verify(view).showErrorState(drawableRes = any(), textRes = any())
   }
 
   @Test

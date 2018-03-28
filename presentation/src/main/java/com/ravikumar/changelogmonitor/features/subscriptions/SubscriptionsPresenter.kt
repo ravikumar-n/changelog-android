@@ -22,8 +22,8 @@ class SubscriptionsPresenter<V : SubscriptionContract.View>
   private val getUserUseCase: GetUserUseCase,
   private val getSubscriptionUseCase: GetSubscriptionUseCase,
   private val addSubscriptionUseCase: AddSubscriptionUseCase,
-  private val connectUserUseCase: dagger.Lazy<ConnectUserUseCase>,
-  private val removeSubscriptionUseCase: dagger.Lazy<RemoveSubscriptionUseCase>
+  private val connectUserUseCase: ConnectUserUseCase,
+  private val removeSubscriptionUseCase: RemoveSubscriptionUseCase
 ) : BasePresenter<V>(), SubscriptionContract.Presenter<V> {
   // region Variables
   private var user: User? = null
@@ -34,7 +34,9 @@ class SubscriptionsPresenter<V : SubscriptionContract.View>
     disposable.addAll(
       getUserUseCase.disposables,
       getSubscriptionUseCase.disposables,
-      addSubscriptionUseCase.disposables
+      addSubscriptionUseCase.disposables,
+      connectUserUseCase.disposables,
+      removeSubscriptionUseCase.disposables
     )
   }
   // endregion
@@ -76,42 +78,38 @@ class SubscriptionsPresenter<V : SubscriptionContract.View>
     email: String
   ) {
     view?.onGoogleSignIn(userName)
-    disposable.add(connectUserUseCase.get().disposables)
-    connectUserUseCase.get()
-      .execute({ userResponse: UserResponse? ->
-        if (userResponse?.user != null) {
-          user = userResponse.user
-          view?.onGoogleSignInSuccess(user!!)
-        } else {
-          view?.onGoogleSignInFailed()
-        }
-      }, { throwable ->
-        Timber.e(throwable, "Failed to connect the google account with guest account ")
+
+    connectUserUseCase.execute({ userResponse: UserResponse? ->
+      if (userResponse?.user != null) {
+        user = userResponse.user
+        view?.onGoogleSignInSuccess(user!!)
+      } else {
         view?.onGoogleSignInFailed()
-      }, ConnectUserUseCase.Params(idToken, user?.copy(emailId = email)!!))
+      }
+    }, { throwable ->
+      Timber.e(throwable, "Failed to connect the google account with guest account ")
+      view?.onGoogleSignInFailed()
+    }, ConnectUserUseCase.Params(idToken, user?.copy(emailId = email)!!))
   }
 
   override fun removeSubscriptionsIfAny() {
     user?.subscriptionId?.let {
-      disposable.add(removeSubscriptionUseCase.get().disposables)
-      removeSubscriptionUseCase.get()
-        .execute({
-          view?.onSubscriptionRemoved()
-        }, { throwable ->
-          Timber.e(throwable, "Failed to remove the subscription")
-        }
-        )
+      removeSubscriptionUseCase.execute({
+        view?.onSubscriptionRemoved()
+      }, { throwable ->
+        Timber.e(throwable, "Failed to remove the subscription")
+      })
     }
   }
   // endregion
 
   // region Private
   private fun getSubscriptionForUser(user: User) {
-    getSubscriptionUseCase.execute({ changelogSubscription ->
-      if (changelogSubscription == null) {
+    getSubscriptionUseCase.execute({
+      if (it == null) {
         view?.showFreePlan()
       } else {
-        view?.showSubscription(changelogSubscription)
+        view?.showSubscription(it)
       }
     }, { throwable ->
       Timber.e(throwable, "Failed to get the subscription for the user")
@@ -132,9 +130,10 @@ class SubscriptionsPresenter<V : SubscriptionContract.View>
       autoRenewing = purchase.isAutoRenewing
     )
 
-    addSubscriptionUseCase.execute({ subscriptionResponse ->
+
+    addSubscriptionUseCase.execute({
       view?.hideLoading()
-      subscriptionResponse?.let {
+      it?.let {
         view?.onSubscriptionPurchased(it)
         view?.showSubscription(it.subscription)
       }

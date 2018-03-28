@@ -22,14 +22,11 @@ object ApplicationModule {
   fun provideContext(application: Application): Context = application
 
   @Singleton @Provides @JvmStatic
-  fun provideSchedulerThreads(): SchedulerProvider {
-    return SchedulerThreads()
-  }
+  fun provideSchedulerThreads(): SchedulerProvider = SchedulerThreads()
 
   @Singleton @Provides @JvmStatic
-  fun provideThreadScheduler(provider: SchedulerProvider): ExecutionScheduler {
-    return ThreadScheduler(provider)
-  }
+  fun provideThreadScheduler(provider: SchedulerProvider): ExecutionScheduler =
+    ThreadScheduler(provider)
 
   @Provides @Singleton @JvmStatic
   fun provideThemePreference(

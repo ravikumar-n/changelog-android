@@ -1,0 +1,27 @@
+{
+  "subscription": {
+    "id": "2ac21cd2-a1a4-231d-824f-b6736f768a6d",
+    "order_id": "GPA.3384-0225-1074-32734",
+    "package_name": "com.ravikumar.changelogmonitor",
+    "product_id": "premium_half_yearly",
+    "purchase_time": 1522195600322,
+    "purchase_token": "this_is_a_purchase_token",
+    "auto_renewing": true,
+    "payment_state": 1,
+    "cancel_reason": -1,
+    "purchase_time_millis": 1522195600322,
+    "expiry_time_millis": 1522196613630,
+    "user_cancellation_time_millis": -1
+  },
+  "user": {
+    "id": "c60356ac-dc7b-4fa5-91d7-5361974d3e9e",
+    "subscription_id": "2ac61cd4-a8a4-431d-824f-b6736f768a6d",
+    "email_id": "arya@winterfell.com",
+    "name": "Arya Stark",
+    "picture": "http://winterfell.com/arya.jpg",
+    "given_name": "Arya",
+    "locale": "en",
+    "created_at": "Jan 20, 2018 3:17:51 PM",
+    "updated_at": "Jan 20, 2018 3:17:51 PM"
+  }
+}

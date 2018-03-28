@@ -24,7 +24,7 @@ interface DashboardModule {
 
   @Binds fun providesAppCompatActivity(activity: DashboardActivity): DaggerAppCompatActivity
 
-  @ContributesAndroidInjector fun contributeUserWathclistFragment(): UserWatchlistFragment
+  @ContributesAndroidInjector fun contributeUserWatchlistFragment(): UserWatchlistFragment
 
   @ContributesAndroidInjector fun contributeFeedFragment(): FeedFragment
 
