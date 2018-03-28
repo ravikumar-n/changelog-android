@@ -35,7 +35,7 @@ Ensure you have selected `staginDebug` variant under `BuildVariant` in Android S
 NOTE: <i>Your first API request may result in timeout, try again. If some weird issue happens, logout and start afresh.</i>
 
 ### Project Members
- - Designer - [Ahila Pillai](https://dribbble.com/AhilaPillai)
+ - Designer - [Ahila Pillai](http://www.ahilapillai.com/) (**Available for Hire**)
  - Developer - [Ravikumar N](https://twitter.com/HappyRavi) (**[Available for Hire](https://www.linkedin.com/in/ravikumar89)**)
  
 ### Acknowledgments
