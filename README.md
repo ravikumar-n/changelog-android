@@ -22,6 +22,18 @@ Currently the app supports 55 widely used libraries. As a free user you can subs
  - Formatting - [square/java-code-styles](https://github.com/square/java-code-styles).
  - Run `detektCheck` task before giving PR. (see: [detekt](https://github.com/arturbosch/detekt))
 
+### Project Setup
+Follow these steps to setup and run the project:
+
+```
+$ git clone git@github.com:ravikumar-n/changelog-android.git
+$ cd changelog-android
+$ cp .keystore.properties keystore.properties && cp .gradle.properties gradle.properties
+```
+Ensure you have selected `staginDebug` variant under `BuildVariant` in Android Studio.
+
+NOTE: <i>Your first API request may result in timeout, try again. If some weird issue happens, logout and start afresh.</i>
+
 ### Project Members
  - Designer - [Ahila Pillai](http://www.ahilapillai.com/) (**Available for Hire**)
  - Developer - [Ravikumar N](https://twitter.com/HappyRavi) (**[Available for Hire](https://www.linkedin.com/in/ravikumar89)**)

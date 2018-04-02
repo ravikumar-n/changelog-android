@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "752141132076",
+    "project_id": "changelog-monitor-staging"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:752141132076:android:68e12c4b6b7a5c75",
+        "android_client_info": {
+          "package_name": "com.ravikumar.changelogmonitor.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "752141132076-7au0mc9ivfrg79vdrhd635ed6nhb75c7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ravikumar.changelogmonitor.dev",
+            "certificate_hash": "8ddb4151564a8b18f43d9a7147a3c6f818b0a0a4"
+          }
+        },
+        {
+          "client_id": "752141132076-uqoselnt4nqsf3584cm39q9eb1ssj4fd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfvh0sNK1mkq6bdOocAhIpCOW5k3SdHCA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
