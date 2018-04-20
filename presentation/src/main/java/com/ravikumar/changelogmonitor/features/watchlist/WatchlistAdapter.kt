@@ -1,7 +1,9 @@
 package com.ravikumar.changelogmonitor.features.watchlist
 
 import android.annotation.SuppressLint
-import android.support.v7.widget.RecyclerView
+import android.support.v7.widget.RecyclerView.Adapter
+import android.support.v7.widget.RecyclerView.NO_POSITION
+import android.support.v7.widget.RecyclerView.ViewHolder
 import android.view.View
 import android.view.ViewGroup
 import com.ravikumar.changelogmonitor.R
@@ -15,7 +17,7 @@ import kotlinx.android.synthetic.main.list_item_repository.view.tagsTextView
 import kotlinx.android.synthetic.main.list_item_repository.view.titleTextView
 import java.util.UUID
 
-class WatchlistAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class WatchlistAdapter : Adapter<ViewHolder>() {
   // region Variables
   var showLoadingMore = false
   var onItemClickListener: ((Repository) -> Unit)? = null
@@ -28,16 +30,16 @@ class WatchlistAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
   override fun onCreateViewHolder(
     parent: ViewGroup,
     viewType: Int
-  ): RecyclerView.ViewHolder? {
+  ): ViewHolder {
     return when (viewType) {
       TYPE_REPOSITORY -> createRepositoryViewHolder(parent)
       TYPE_LOADING_MORE -> LoadingMoreHolder(view = parent.inflate(R.layout.infinite_loading))
-      else -> null
+      else -> createRepositoryViewHolder(parent)
     }
   }
 
   override fun onBindViewHolder(
-    viewHolder: RecyclerView.ViewHolder?,
+    viewHolder: ViewHolder,
     position: Int
   ) {
     when (getItemViewType(position)) {
@@ -107,7 +109,7 @@ class WatchlistAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
   private fun createRepositoryViewHolder(parent: ViewGroup): RepositoryViewHolder {
     val repoHolder = RepositoryViewHolder(view = parent.inflate(R.layout.list_item_repository))
     repoHolder.itemView.setOnClickListener({
-      if (repoHolder.adapterPosition != RecyclerView.NO_POSITION) {
+      if (repoHolder.adapterPosition != NO_POSITION) {
         val repository = repositories[repoHolder.adapterPosition]
         if (watchlist.contains(repository.id)) {
           watchlist.remove(repository.id)
@@ -123,12 +125,12 @@ class WatchlistAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
   }
 
   private fun getLoadingMoreItemPosition(): Int {
-    return if (showLoadingMore) itemCount - 1 else RecyclerView.NO_POSITION
+    return if (showLoadingMore) itemCount - 1 else NO_POSITION
   }
   // endregion
 
   // region  ViewHolders
-  private class RepositoryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+  private class RepositoryViewHolder(view: View) : ViewHolder(view) {
     @SuppressLint("SetTextI18n")
     fun bindRepository(
       repository: Repository,
@@ -145,7 +147,7 @@ class WatchlistAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
   }
 
-  private class LoadingMoreHolder(view: View) : RecyclerView.ViewHolder(view) {
+  private class LoadingMoreHolder(view: View) : ViewHolder(view) {
     fun bindLoading() {
       with(itemView) {
         loading.visibility = View.VISIBLE

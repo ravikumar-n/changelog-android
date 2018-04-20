@@ -20,16 +20,16 @@ ext {
   KEYSTORE_KEY_PASSWORD = keystoreProperties['keyPassword']
 
   // Compile Dependencies
-  kotlinVersion = "1.2.31"
-  gradleVersion = "3.1.0"
+  kotlinVersion = "1.2.40"
+  gradleVersion = "3.1.1"
   googleServicesVersion = "3.1.2"
   versionsPluginVersion = "0.17.0"
   crashlyticsPluginVersion = "1.25.1"
 
   // Android-libraries
-  supportVersion = "27.0.2"
-  constraintlayoutVersion = "1.1.0-beta4"
-  playVersion = "12.0.0"
+  supportVersion = "27.1.0"
+  constraintlayoutVersion = "1.1.0"
+  playVersion = "15.0.0"
   roomVersion = "1.0.0"
   billingVersion = "1.0"
 
@@ -37,8 +37,8 @@ ext {
   okHttpVersion = "3.10.0"
   gsonVersion = "2.8.2"
   daggerVersion = "2.15"
-  timberVersion = "4.6.1"
-  glideVersion = "4.6.1"
+  timberVersion = "4.7.0"
+  glideVersion = "4.7.1"
   retrofitVersion = "2.4.0"
   retrofitRxJavaAdapterVersion = "1.0.0"
   javaxInjectVersion = "1"
@@ -46,7 +46,7 @@ ext {
   crashlyticsVersion = "2.9.1"
 
   // Reactive libraries
-  rxJavaVersion = "2.1.9"
+  rxJavaVersion = "2.1.12"
   rxAndroidVersion = "2.0.2"
   rxBindingVersion = "2.1.1"
   rxRelayVersion = "2.0.0"

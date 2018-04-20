@@ -1,7 +1,9 @@
 package com.ravikumar.changelogmonitor.features.feed
 
 import android.annotation.SuppressLint
-import android.support.v7.widget.RecyclerView
+import android.support.v7.widget.RecyclerView.Adapter
+import android.support.v7.widget.RecyclerView.NO_POSITION
+import android.support.v7.widget.RecyclerView.ViewHolder
 import android.view.View
 import android.view.ViewGroup
 import com.ravikumar.changelogmonitor.R
@@ -15,7 +17,7 @@ import kotlinx.android.synthetic.main.list_item_changelog_feed.view.viewDetailBu
 import ru.noties.markwon.Markwon
 import java.util.UUID
 
-class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class FeedAdapter : Adapter<ViewHolder>() {
   // region Variables
   var viewDetailClickListener: ((Changelog, Repository) -> Unit)? = null
 
@@ -27,21 +29,19 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
   override fun onCreateViewHolder(
     parent: ViewGroup,
     viewType: Int
-  ): RecyclerView.ViewHolder? {
+  ): ViewHolder {
     return changelogFeedViewHolder(parent)
   }
 
   override fun onBindViewHolder(
-    viewHolder: RecyclerView.ViewHolder?,
+    viewHolder: ViewHolder,
     position: Int
   ) {
-    viewHolder?.let {
-      if (getItemViewType(position) == TYPE_CHANGELOG_FEED) {
-        val repository = repoMap[items[position].repoId]
-        repository?.let {
-          (viewHolder as? ChangelogFeedViewHolder)
-            ?.bindFeed(items[position], it)
-        }
+    if (getItemViewType(position) == TYPE_CHANGELOG_FEED) {
+      val repository = repoMap[items[position].repoId]
+      repository?.let {
+        (viewHolder as? ChangelogFeedViewHolder)
+          ?.bindFeed(items[position], it)
       }
     }
   }
@@ -76,7 +76,7 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
   private fun changelogFeedViewHolder(parent: ViewGroup): ChangelogFeedViewHolder {
     val holder = ChangelogFeedViewHolder(view = parent.inflate(R.layout.list_item_changelog_feed))
     holder.itemView.viewDetailButton.setOnClickListener({
-      if (holder.adapterPosition != RecyclerView.NO_POSITION) {
+      if (holder.adapterPosition != NO_POSITION) {
         val changelog = items[holder.adapterPosition]
         viewDetailClickListener?.invoke(changelog, repoMap[changelog.repoId]!!)
       }
@@ -86,7 +86,7 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
   // endregion
 
   // region  ViewHolders
-  private class ChangelogFeedViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+  private class ChangelogFeedViewHolder(view: View) : ViewHolder(view) {
     @SuppressLint("SetTextI18n")
     fun bindFeed(
       changelog: Changelog,
