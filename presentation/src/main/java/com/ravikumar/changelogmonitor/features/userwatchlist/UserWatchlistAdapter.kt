@@ -2,6 +2,8 @@ package com.ravikumar.changelogmonitor.features.userwatchlist
 
 import android.annotation.SuppressLint
 import android.support.v7.widget.RecyclerView
+import android.support.v7.widget.RecyclerView.Adapter
+import android.support.v7.widget.RecyclerView.ViewHolder
 import android.view.View
 import android.view.ViewGroup
 import com.ravikumar.changelogmonitor.R
@@ -12,7 +14,7 @@ import kotlinx.android.synthetic.main.list_item_repository.view.descriptionTextV
 import kotlinx.android.synthetic.main.list_item_repository.view.tagsTextView
 import kotlinx.android.synthetic.main.list_item_repository.view.titleTextView
 
-class UserWatchlistAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class UserWatchlistAdapter : Adapter<ViewHolder>() {
   // region Variables
   private var onItemClickListener: ((Repository) -> Unit)? = null
 
@@ -23,15 +25,12 @@ class UserWatchlistAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
   override fun onCreateViewHolder(
     parent: ViewGroup,
     viewType: Int
-  ): RecyclerView.ViewHolder? {
-    return when (viewType) {
-      TYPE_REPOSITORY -> createRepositoryViewHolder(parent)
-      else -> null
-    }
+  ): ViewHolder {
+    return createRepositoryViewHolder(parent)
   }
 
   override fun onBindViewHolder(
-    viewHolder: RecyclerView.ViewHolder?,
+    viewHolder: ViewHolder,
     position: Int
   ) {
     when (getItemViewType(position)) {
@@ -73,7 +72,7 @@ class UserWatchlistAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
   // endregion
 
   // region  ViewHolders
-  private class RepositoryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+  private class RepositoryViewHolder(view: View) : ViewHolder(view) {
     @SuppressLint("SetTextI18n")
     fun bindRepository(repository: Repository) {
       with(repository) {

@@ -19,17 +19,9 @@ android {
     versionName globalConfiguration["appVersionName"]
 
     archivesBaseName = "Changelog-${appVersionName}"
-
     vectorDrawables.useSupportLibrary = true
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     resConfigs "en"
-
-    javaCompileOptions {
-      annotationProcessorOptions {
-        includeCompileClasspath false
-      }
-    }
-
     buildConfigField "String", "LICENSE_KEY", "\"${playLicenseKey}\""
   }
 
