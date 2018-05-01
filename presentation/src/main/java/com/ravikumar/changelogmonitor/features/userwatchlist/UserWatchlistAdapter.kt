@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.list_item_repository.view.titleTextView
 
 class UserWatchlistAdapter : Adapter<ViewHolder>() {
   // region Variables
-  private var onItemClickListener: ((Repository) -> Unit)? = null
+  var onItemClickListener: ((Repository) -> Unit)? = null
 
   private val repositories: MutableList<Repository> = mutableListOf()
   // endregion

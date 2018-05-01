@@ -42,7 +42,7 @@ detekt {
   profile("main") {
     input = "$projectDir/presentation/src/main/java"
     config = "$projectDir/code-analysis/detekt.yml"
-    filters = ".*test.*,.*/resources/.*,.*/tmp/.*,.*/InkPageIndicator.kt"
+    filters = ".*test.*,.*/resources/.*,.*/tmp/.*,.*/InkPageIndicator.kt,.*/customtabs"
     output = "$projectDir/presentation/build/reports/detekt"
   }
 }

@@ -1,15 +1,21 @@
 package com.ravikumar.changelogmonitor.features.userwatchlist
 
+import android.app.Activity
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.support.customtabs.CustomTabsIntent
 import android.support.v4.content.ContextCompat
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.ravikumar.changelogmonitor.APP_PLAYSTORE_URI
 import com.ravikumar.changelogmonitor.ChangelogApplication
 import com.ravikumar.changelogmonitor.R
 import com.ravikumar.changelogmonitor.features.watchlist.WatchlistActivity
+import com.ravikumar.changelogmonitor.framework.customtabs.CustomTabActivityHelper
 import com.ravikumar.changelogmonitor.framework.extensions.textResource
 import com.ravikumar.changelogmonitor.helpers.events.NewWatchlistEvent
 import com.ravikumar.changelogmonitor.helpers.events.UserEvent
@@ -27,6 +33,7 @@ import kotlinx.android.synthetic.main.toolbar.toolbar
 import javax.inject.Inject
 
 class UserWatchlistFragment : DaggerFragment(), UserWatchlistContract.View {
+
   // region DI
   @Inject lateinit var presenter: UserWatchlistPresenter<UserWatchlistContract.View>
   // endregion
@@ -34,6 +41,7 @@ class UserWatchlistFragment : DaggerFragment(), UserWatchlistContract.View {
   // region Variables
   private val disposables = CompositeDisposable()
   lateinit var adapter: UserWatchlistAdapter
+  private val customTab = CustomTabActivityHelper()
   // endregion
 
   // region Lifecycle
@@ -61,10 +69,20 @@ class UserWatchlistFragment : DaggerFragment(), UserWatchlistContract.View {
     presenter.onAttach(this)
   }
 
+  override fun onStart() {
+    super.onStart()
+    customTab.bindCustomTabsService(activity as Activity)
+  }
+
+  override fun onStop() {
+    customTab.unbindCustomTabsService(activity as Activity)
+    super.onStop()
+  }
+
   override fun onDestroyView() {
-    super.onDestroyView()
     presenter.onDetach()
     disposables.clear()
+    super.onDestroyView()
   }
   // endregion
 
@@ -144,6 +162,19 @@ class UserWatchlistFragment : DaggerFragment(), UserWatchlistContract.View {
   private fun setupRecyclerView() {
     adapter = UserWatchlistAdapter()
     adapter.setHasStableIds(true)
+    adapter.onItemClickListener = {
+      val customTabsIntent = CustomTabsIntent.Builder()
+        .build()
+      customTabsIntent.intent.putExtra(CustomTabsIntent.EXTRA_TOOLBAR_COLOR, R.color.primary)
+      customTabsIntent.intent.putExtra(
+        Intent.EXTRA_REFERRER,
+        Uri.parse(APP_PLAYSTORE_URI)
+      )
+
+      CustomTabActivityHelper.openCustomTab(
+        activity as Activity, customTabsIntent, Uri.parse(it.url)
+      )
+    }
 
     val linearLayoutManager = LinearLayoutManager(activity)
     val dividerItemDecoration = DividerItemDecoration(context, linearLayoutManager.orientation)

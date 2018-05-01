@@ -27,7 +27,7 @@ ext {
   crashlyticsPluginVersion = "1.25.1"
 
   // Android-libraries
-  supportVersion = "27.1.0"
+  supportVersion = "27.1.1"
   constraintlayoutVersion = "1.1.0"
   playVersion = "15.0.0"
   roomVersion = "1.0.0"
@@ -81,6 +81,7 @@ ext {
                               supportRecyclerView     : "com.android.support:recyclerview-v7:$supportVersion",
                               constraintlayout        : "com.android.support.constraint:constraint-layout:$constraintlayoutVersion",
                               billing                 : "com.android.billingclient:billing:$billingVersion",
+                              customTabs              : "com.android.support:customtabs:$supportVersion",
 
                               // Dagger
                               daggerCompiler          : "com.google.dagger:dagger-compiler:$daggerVersion",

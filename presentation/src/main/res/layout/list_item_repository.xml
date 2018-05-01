@@ -17,13 +17,27 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     >
-    <TextView
-      android:id="@+id/titleTextView"
+    <LinearLayout
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:textAppearance="@style/ListItemTextAppearance.Primary"
-      tools:text="@sample/repositories.json/repositories/name"
-      />
+      android:gravity="center"
+      android:orientation="horizontal"
+      >
+      <ImageView
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="@dimen/spacing_small"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/ic_github_icon_tint_24dp"
+        />
+      <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/ListItemTextAppearance.Primary"
+        tools:text="@sample/repositories.json/repositories/name"
+        />
+    </LinearLayout>
 
     <ImageView
       android:id="@+id/checkMarkImage"
