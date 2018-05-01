@@ -20,7 +20,7 @@ ext {
   KEYSTORE_KEY_PASSWORD = keystoreProperties['keyPassword']
 
   // Compile Dependencies
-  kotlinVersion = "1.2.40"
+  kotlinVersion = "1.2.41"
   gradleVersion = "3.1.2"
   googleServicesVersion = "3.1.2"
   versionsPluginVersion = "0.17.0"
@@ -35,7 +35,7 @@ ext {
 
   // Third party libraries
   okHttpVersion = "3.10.0"
-  gsonVersion = "2.8.2"
+  gsonVersion = "2.8.3"
   daggerVersion = "2.15"
   timberVersion = "4.7.0"
   glideVersion = "4.7.1"
@@ -43,10 +43,10 @@ ext {
   retrofitRxJavaAdapterVersion = "1.0.0"
   javaxInjectVersion = "1"
   mdVersion = "1.0.4"
-  crashlyticsVersion = "2.9.1"
+  crashlyticsVersion = "2.9.2"
 
   // Reactive libraries
-  rxJavaVersion = "2.1.12"
+  rxJavaVersion = "2.1.13"
   rxAndroidVersion = "2.0.2"
   rxBindingVersion = "2.1.1"
   rxRelayVersion = "2.0.0"
@@ -57,10 +57,10 @@ ext {
 
   // Testing libraries
   jUnitVersion = "4.12"
-  espressoVersion = "3.0.1"
+  espressoVersion = "3.0.2"
   mockitoKotlinVersion = "1.5.0"
-  rulesVersion = "1.0.1"
-  runnerVersion = "1.0.1"
+  rulesVersion = "1.0.2"
+  runnerVersion = "1.0.2"
 
   compileDependencies = [gradlePlugin        : "com.android.tools.build:gradle:$gradleVersion",
                          kotlinPlugin        : "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion",
@@ -68,7 +68,7 @@ ext {
                          versionsPlugin      : "com.github.ben-manes:gradle-versions-plugin:$versionsPluginVersion",
                          crashlyticsPlugin   : "io.fabric.tools:gradle:$crashlyticsPluginVersion"]
 
-  commonDependencies = [kotlinStdLibrary: "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlinVersion",
+  commonDependencies = [kotlinStdLibrary: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
                         timber          : "com.jakewharton.timber:timber:$timberVersion",
                         gson            : "com.google.code.gson:gson:$gsonVersion",
                         room            : "android.arch.persistence.room:runtime:$roomVersion",
