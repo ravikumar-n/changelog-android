@@ -21,7 +21,7 @@ ext {
 
   // Compile Dependencies
   kotlinVersion = "1.2.40"
-  gradleVersion = "3.1.1"
+  gradleVersion = "3.1.2"
   googleServicesVersion = "3.1.2"
   versionsPluginVersion = "0.17.0"
   crashlyticsPluginVersion = "1.25.1"
