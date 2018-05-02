@@ -66,16 +66,6 @@ class UserWatchlistFragment : DaggerFragment(), UserWatchlistContract.View {
     presenter.onAttach(this)
   }
 
-  override fun onStart() {
-    super.onStart()
-    customTab.bindCustomTabsService(activity as Activity)
-  }
-
-  override fun onStop() {
-    customTab.unbindCustomTabsService(activity as Activity)
-    super.onStop()
-  }
-
   override fun onDestroyView() {
     presenter.onDetach()
     disposables.clear()
