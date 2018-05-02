@@ -1,21 +1,18 @@
 package com.ravikumar.changelogmonitor.features.userwatchlist
 
 import android.app.Activity
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
-import android.support.customtabs.CustomTabsIntent
 import android.support.v4.content.ContextCompat
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.ravikumar.changelogmonitor.APP_PLAYSTORE_URI
 import com.ravikumar.changelogmonitor.ChangelogApplication
 import com.ravikumar.changelogmonitor.R
 import com.ravikumar.changelogmonitor.features.watchlist.WatchlistActivity
 import com.ravikumar.changelogmonitor.framework.customtabs.CustomTabActivityHelper
+import com.ravikumar.changelogmonitor.framework.extensions.openInCustomTab
 import com.ravikumar.changelogmonitor.framework.extensions.textResource
 import com.ravikumar.changelogmonitor.helpers.events.NewWatchlistEvent
 import com.ravikumar.changelogmonitor.helpers.events.UserEvent
@@ -163,17 +160,8 @@ class UserWatchlistFragment : DaggerFragment(), UserWatchlistContract.View {
     adapter = UserWatchlistAdapter()
     adapter.setHasStableIds(true)
     adapter.onItemClickListener = {
-      val customTabsIntent = CustomTabsIntent.Builder()
-        .build()
-      customTabsIntent.intent.putExtra(CustomTabsIntent.EXTRA_TOOLBAR_COLOR, R.color.primary)
-      customTabsIntent.intent.putExtra(
-        Intent.EXTRA_REFERRER,
-        Uri.parse(APP_PLAYSTORE_URI)
-      )
-
-      CustomTabActivityHelper.openCustomTab(
-        activity as Activity, customTabsIntent, Uri.parse(it.url)
-      )
+      @Suppress("CAST_NEVER_SUCCEEDS")
+      it.url.openInCustomTab(activity as Activity)
     }
 
     val linearLayoutManager = LinearLayoutManager(activity)

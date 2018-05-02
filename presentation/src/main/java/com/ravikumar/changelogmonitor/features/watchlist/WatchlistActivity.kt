@@ -11,6 +11,7 @@ import android.widget.Toast
 import com.ravikumar.changelogmonitor.ChangelogApplication
 import com.ravikumar.changelogmonitor.R
 import com.ravikumar.changelogmonitor.framework.extensions.createIntent
+import com.ravikumar.changelogmonitor.framework.extensions.openInCustomTab
 import com.ravikumar.changelogmonitor.framework.extensions.statusBarHeight
 import com.ravikumar.changelogmonitor.framework.extensions.textResource
 import com.ravikumar.changelogmonitor.framework.recyclerview.EndlessRecyclerViewScrollListener
@@ -149,8 +150,10 @@ class WatchlistActivity : DaggerAppCompatActivity(), WatchlistContract.View {
   }
 
   private fun setRecyclerViewClickListener() {
-    adapter.onItemClickListener = {
-      // TODO Take them to detail?
+    adapter.onItemClickListener = { type: Int, repository: Repository ->
+      if (type == WatchlistAdapter.INTENT_TO_VIEW_REPOSITORY) {
+        repository.url.openInCustomTab(this)
+      }
     }
   }
 
