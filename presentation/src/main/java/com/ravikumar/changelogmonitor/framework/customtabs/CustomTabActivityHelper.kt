@@ -105,8 +105,8 @@ class CustomTabActivityHelper {
    */
   fun mayLaunchUrl(
     uri: Uri,
-    extras: Bundle,
-    otherLikelyBundles: List<Bundle>
+    extras: Bundle?,
+    otherLikelyBundles: List<Bundle>?
   ): Boolean {
     if (mClient == null) return false
 
