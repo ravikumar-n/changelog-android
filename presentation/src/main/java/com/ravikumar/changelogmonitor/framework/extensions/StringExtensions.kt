@@ -23,6 +23,7 @@ fun String.getHumanReadableTags(): String {
 
 fun String.openInCustomTab(activity: Activity) {
   val customTabsIntent = CustomTabsIntent.Builder()
+    .enableUrlBarHiding()
     .build()
   customTabsIntent.intent.putExtra(CustomTabsIntent.EXTRA_TOOLBAR_COLOR, R.color.primary)
   customTabsIntent.intent.putExtra(

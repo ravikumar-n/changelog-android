@@ -87,8 +87,9 @@ class ChangelogDetailFragment : DaggerFragment(),
   }
 
   override fun onDestroyView() {
-    super.onDestroyView()
+    customTab.setConnectionCallback(null)
     presenter.onDetach()
+    super.onDestroyView()
   }
   // endregion
 
@@ -179,9 +180,10 @@ class ChangelogDetailFragment : DaggerFragment(),
 
   // region Anonymous Inner classes
   private val customTabConnect = object : CustomTabActivityHelper.ConnectionCallback {
-
     override fun onCustomTabsConnected() {
-      customTab.mayLaunchUrl(Uri.parse(repoUrl), null, null)
+      repoUrl?.let {
+        customTab.mayLaunchUrl(Uri.parse(repoUrl), null, null)
+      }
     }
 
     override fun onCustomTabsDisconnected() {}

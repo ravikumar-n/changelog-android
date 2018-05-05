@@ -95,7 +95,7 @@ class CustomTabActivityHelper {
    * Register a Callback to be called when connected or disconnected from the Custom Tabs Service
    * @param connectionCallback
    */
-  fun setConnectionCallback(connectionCallback: ConnectionCallback) {
+  fun setConnectionCallback(connectionCallback: ConnectionCallback?) {
     this.mConnectionCallback = connectionCallback
   }
 
