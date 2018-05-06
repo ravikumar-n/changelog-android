@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
@@ -7,62 +7,57 @@
   android:background="?android:attr/selectableItemBackground"
   android:clickable="true"
   android:focusable="true"
-  android:orientation="vertical"
   android:paddingBottom="@dimen/spacing_small"
-  android:paddingLeft="@dimen/padding_normal"
-  android:paddingRight="@dimen/padding_normal"
+  android:paddingEnd="@dimen/padding_normal"
+  android:paddingStart="@dimen/spacing_small"
   android:paddingTop="@dimen/spacing_small"
   >
-  <RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    >
-    <LinearLayout
-      android:id="@+id/titleContainer"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:background="?android:attr/selectableItemBackground"
-      android:clickable="true"
-      android:focusable="true"
-      android:gravity="center"
-      android:orientation="horizontal"
-      >
-      <ImageView
-        android:layout_width="@dimen/github_icon_size"
-        android:layout_height="@dimen/github_icon_size"
-        android:layout_marginEnd="@dimen/spacing_small"
-        android:scaleType="fitXY"
-        app:srcCompat="@drawable/ic_github_icon_tint_24dp"
-        tools:ignore="ContentDescription"
-        />
-      <TextView
-        android:id="@+id/titleTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/ListItemTextAppearance.Primary"
-        android:textSize="@dimen/text_size_large"
-        tools:text="@sample/repositories.json/repositories/name"
-        />
-    </LinearLayout>
 
-    <ImageView
-      android:id="@+id/checkMarkImage"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_alignParentEnd="true"
-      android:layout_marginStart="@dimen/spacing_micro"
-      android:contentDescription="@string/cd_check"
-      android:visibility="invisible"
-      app:srcCompat="@drawable/ic_check_circle_24dp"
-      tools:visibility="visible"
-      />
-  </RelativeLayout>
+  <ImageView
+    android:id="@+id/logoImage"
+    android:layout_width="@dimen/logo_size"
+    android:layout_height="@dimen/logo_size"
+    android:layout_alignParentStart="true"
+    android:layout_centerInParent="true"
+    android:background="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    app:srcCompat="@drawable/ic_github_icon_tint_24dp"
+    />
+
+  <TextView
+    android:id="@+id/titleTextView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/spacing_large"
+    android:layout_marginStart="@dimen/spacing_small"
+    android:layout_toEndOf="@id/logoImage"
+    android:ellipsize="end"
+    android:maxLines="1"
+    android:textAppearance="@style/ListItemTextAppearance.Primary"
+    android:textSize="@dimen/text_size_large"
+    tools:text="@sample/repositories.json/repositories/name"
+    />
+
+  <ImageView
+    android:id="@+id/checkMarkImage"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentEnd="true"
+    android:contentDescription="@string/cd_check"
+    android:visibility="invisible"
+    app:srcCompat="@drawable/ic_check_circle_24dp"
+    tools:visibility="visible"
+    />
 
   <TextView
     android:id="@+id/descriptionTextView"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_below="@id/titleTextView"
     android:layout_marginEnd="@dimen/spacing_medium"
+    android:layout_marginStart="@dimen/spacing_small"
+    android:layout_toEndOf="@id/logoImage"
     android:ellipsize="end"
     android:maxLines="2"
     android:textAppearance="@style/ListItemTextAppearance.Secondary"
@@ -71,8 +66,11 @@
 
   <TextView
     android:id="@+id/tagsTextView"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_below="@id/descriptionTextView"
+    android:layout_marginStart="@dimen/spacing_small"
+    android:layout_toEndOf="@id/logoImage"
     android:ellipsize="end"
     android:maxLines="1"
     android:textAppearance="@style/AppTheme.TextAppearance.RobotoCondensed"
@@ -81,4 +79,4 @@
     tools:text="@sample/repositories.json/repositories/tags"
     />
 
-</LinearLayout>
+</RelativeLayout>

@@ -13,8 +13,8 @@ import com.ravikumar.entities.Repository
 import kotlinx.android.synthetic.main.infinite_loading.view.loading
 import kotlinx.android.synthetic.main.list_item_repository.view.checkMarkImage
 import kotlinx.android.synthetic.main.list_item_repository.view.descriptionTextView
+import kotlinx.android.synthetic.main.list_item_repository.view.logoImage
 import kotlinx.android.synthetic.main.list_item_repository.view.tagsTextView
-import kotlinx.android.synthetic.main.list_item_repository.view.titleContainer
 import kotlinx.android.synthetic.main.list_item_repository.view.titleTextView
 import java.util.UUID
 
@@ -109,7 +109,7 @@ class WatchlistAdapter : Adapter<ViewHolder>() {
   // region Private
   private fun createRepositoryViewHolder(parent: ViewGroup): RepositoryViewHolder {
     val repoHolder = RepositoryViewHolder(view = parent.inflate(R.layout.list_item_repository))
-    repoHolder.itemView.titleContainer.setOnClickListener {
+    repoHolder.itemView.logoImage.setOnClickListener {
       if (repoHolder.adapterPosition != NO_POSITION) {
         onItemClickListener?.invoke(
           INTENT_TO_VIEW_REPOSITORY, repositories[repoHolder.adapterPosition]
