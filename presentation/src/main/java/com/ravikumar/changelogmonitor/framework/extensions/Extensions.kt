@@ -1,13 +1,9 @@
 package com.ravikumar.changelogmonitor.framework.extensions
 
-import android.app.Activity
 import android.content.Context
-import android.content.Intent
-import android.net.Uri
 import android.support.annotation.ColorRes
 import android.support.annotation.IntegerRes
 import android.support.annotation.LayoutRes
-import android.support.customtabs.CustomTabsIntent
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentTransaction
@@ -16,10 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.jakewharton.retrofit2.adapter.rxjava2.HttpException
-import com.ravikumar.changelogmonitor.APP_PLAYSTORE_URI
 import com.ravikumar.changelogmonitor.ChangelogApplication
-import com.ravikumar.changelogmonitor.R
-import com.ravikumar.changelogmonitor.framework.customtabs.CustomTabActivityHelper
 import com.ravikumar.entities.ApiError
 
 inline fun FragmentManager.inTransaction(func: FragmentTransaction.() -> FragmentTransaction) =
