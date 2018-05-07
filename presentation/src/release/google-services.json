@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "938597636094",
+    "firebase_url": "https://changelog-monitor-production.firebaseio.com",
+    "project_id": "changelog-monitor-production",
+    "storage_bucket": "changelog-monitor-production.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:938597636094:android:6d22ae2b6b13b7b7",
+        "android_client_info": {
+          "package_name": "com.ravikumar.changelogmonitor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "938597636094-87bia019ma448h40pg55lkn6knentb26.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ravikumar.changelogmonitor",
+            "certificate_hash": "a377d29353b4ed575f4add8bf26c62e7cd5a080a"
+          }
+        },
+        {
+          "client_id": "938597636094-g30qk1nnvhnquaorolt2j9halcegtp9k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ravikumar.changelogmonitor",
+            "certificate_hash": "df26300a6655c7e9d43703ad72ddc2a0f35cf4d7"
+          }
+        },
+        {
+          "client_id": "938597636094-drvng1b0ql1ijbgnkujug73anqcqq5ab.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "938597636094-n8keni6ifjtq2m2thr9sls8quj7670jv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHbBF5KjvC85HPWqdVS4n3m57KcmofZuQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "938597636094-drvng1b0ql1ijbgnkujug73anqcqq5ab.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

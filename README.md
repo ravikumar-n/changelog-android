@@ -1,4 +1,4 @@
-# Changelog Monitor
+# Changelog Monitor [![CircleCI](https://circleci.com/gh/ravikumar-n/changelog-android/tree/master.svg?style=svg)](https://circleci.com/gh/ravikumar-n/changelog-android/tree/master)
 **Android app to monitor all your favorite libraries release and their changelog in one place.**
 
 <img src="presentation/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" align="left"

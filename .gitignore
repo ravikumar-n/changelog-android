@@ -42,10 +42,6 @@ captures/
 # Native build
 .externalNativeBuild
 
-# Firebase configuration ( Push notification)
-**/dogfood/google-services.json
-**/release/google-services.json
-
 # Playstore signing keys
 keystore.properties
 changelog.jks
