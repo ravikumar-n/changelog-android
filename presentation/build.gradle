@@ -128,6 +128,7 @@ dependencies {
   implementation presentationDependencies.constraintlayout
   implementation presentationDependencies.playServicesAuth
   implementation presentationDependencies.billing
+  implementation presentationDependencies.customTabs
 
   // Rx
   implementation presentationDependencies.rxJava

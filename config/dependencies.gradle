@@ -22,21 +22,22 @@ ext {
   // Compile Dependencies
   kotlinVersion = "1.2.41"
   gradleVersion = "3.1.2"
-  googleServicesVersion = "3.1.2"
+  googleServicesVersion = "3.2.1"
   versionsPluginVersion = "0.17.0"
   crashlyticsPluginVersion = "1.25.1"
 
   // Android-libraries
-  supportVersion = "27.1.0"
+  supportVersion = "27.1.1"
   constraintlayoutVersion = "1.1.0"
-  playVersion = "15.0.0"
+  playVersion = "15.0.1"
+  firebaseVersion= "15.0.2"
   roomVersion = "1.0.0"
   billingVersion = "1.0"
 
   // Third party libraries
   okHttpVersion = "3.10.0"
-  gsonVersion = "2.8.3"
-  daggerVersion = "2.15"
+  gsonVersion = "2.8.4"
+  daggerVersion = "2.16"
   timberVersion = "4.7.0"
   glideVersion = "4.7.1"
   retrofitVersion = "2.4.0"
@@ -81,6 +82,7 @@ ext {
                               supportRecyclerView     : "com.android.support:recyclerview-v7:$supportVersion",
                               constraintlayout        : "com.android.support.constraint:constraint-layout:$constraintlayoutVersion",
                               billing                 : "com.android.billingclient:billing:$billingVersion",
+                              customTabs              : "com.android.support:customtabs:$supportVersion",
 
                               // Dagger
                               daggerCompiler          : "com.google.dagger:dagger-compiler:$daggerVersion",
@@ -113,8 +115,8 @@ ext {
                               retrofitRxAdapter       : "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$retrofitRxJavaAdapterVersion",
 
                               // Firebase & co
-                              firebaseCore            : "com.google.firebase:firebase-core:$playVersion",
-                              firebaseMessaging       : "com.google.firebase:firebase-messaging:$playVersion",
+                              firebaseCore            : "com.google.firebase:firebase-core:$firebaseVersion",
+                              firebaseMessaging       : "com.google.firebase:firebase-messaging:$firebaseVersion",
                               crashlytics             : "com.crashlytics.sdk.android:crashlytics:$crashlyticsVersion",
 
                               // Other

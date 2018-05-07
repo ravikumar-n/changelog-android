@@ -13,6 +13,7 @@ import com.ravikumar.entities.Repository
 import kotlinx.android.synthetic.main.infinite_loading.view.loading
 import kotlinx.android.synthetic.main.list_item_repository.view.checkMarkImage
 import kotlinx.android.synthetic.main.list_item_repository.view.descriptionTextView
+import kotlinx.android.synthetic.main.list_item_repository.view.logoImage
 import kotlinx.android.synthetic.main.list_item_repository.view.tagsTextView
 import kotlinx.android.synthetic.main.list_item_repository.view.titleTextView
 import java.util.UUID
@@ -20,7 +21,7 @@ import java.util.UUID
 class WatchlistAdapter : Adapter<ViewHolder>() {
   // region Variables
   var showLoadingMore = false
-  var onItemClickListener: ((Repository) -> Unit)? = null
+  var onItemClickListener: ((Int, Repository) -> Unit)? = null
 
   private val repositories: MutableList<Repository> = mutableListOf()
   private var watchlist: HashSet<UUID> = hashSetOf()
@@ -108,6 +109,13 @@ class WatchlistAdapter : Adapter<ViewHolder>() {
   // region Private
   private fun createRepositoryViewHolder(parent: ViewGroup): RepositoryViewHolder {
     val repoHolder = RepositoryViewHolder(view = parent.inflate(R.layout.list_item_repository))
+    repoHolder.itemView.logoImage.setOnClickListener {
+      if (repoHolder.adapterPosition != NO_POSITION) {
+        onItemClickListener?.invoke(
+          INTENT_TO_VIEW_REPOSITORY, repositories[repoHolder.adapterPosition]
+        )
+      }
+    }
     repoHolder.itemView.setOnClickListener({
       if (repoHolder.adapterPosition != NO_POSITION) {
         val repository = repositories[repoHolder.adapterPosition]
@@ -118,7 +126,9 @@ class WatchlistAdapter : Adapter<ViewHolder>() {
           watchlist.add(repository.id)
           repoHolder.itemView.checkMarkImage.visibility = View.VISIBLE
         }
-        onItemClickListener?.invoke(repositories[repoHolder.adapterPosition])
+        onItemClickListener?.invoke(
+          INTENT_TO_ADD_TO_WATCHLIST, repositories[repoHolder.adapterPosition]
+        )
       }
     })
     return repoHolder
@@ -161,6 +171,9 @@ class WatchlistAdapter : Adapter<ViewHolder>() {
     // region Constants
     private const val TYPE_LOADING_MORE = -1
     private const val TYPE_REPOSITORY = 1
+
+    const val INTENT_TO_VIEW_REPOSITORY = 1
+    const val INTENT_TO_ADD_TO_WATCHLIST = 2
     // endregion
   }
   // endregion

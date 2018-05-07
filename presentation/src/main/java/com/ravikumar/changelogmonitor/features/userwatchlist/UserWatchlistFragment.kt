@@ -1,5 +1,6 @@
 package com.ravikumar.changelogmonitor.features.userwatchlist
 
+import android.app.Activity
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.support.v7.widget.DividerItemDecoration
@@ -10,6 +11,8 @@ import android.view.ViewGroup
 import com.ravikumar.changelogmonitor.ChangelogApplication
 import com.ravikumar.changelogmonitor.R
 import com.ravikumar.changelogmonitor.features.watchlist.WatchlistActivity
+import com.ravikumar.changelogmonitor.framework.customtabs.CustomTabActivityHelper
+import com.ravikumar.changelogmonitor.framework.extensions.openInCustomTab
 import com.ravikumar.changelogmonitor.framework.extensions.textResource
 import com.ravikumar.changelogmonitor.helpers.events.NewWatchlistEvent
 import com.ravikumar.changelogmonitor.helpers.events.UserEvent
@@ -27,6 +30,7 @@ import kotlinx.android.synthetic.main.toolbar.toolbar
 import javax.inject.Inject
 
 class UserWatchlistFragment : DaggerFragment(), UserWatchlistContract.View {
+
   // region DI
   @Inject lateinit var presenter: UserWatchlistPresenter<UserWatchlistContract.View>
   // endregion
@@ -34,6 +38,7 @@ class UserWatchlistFragment : DaggerFragment(), UserWatchlistContract.View {
   // region Variables
   private val disposables = CompositeDisposable()
   lateinit var adapter: UserWatchlistAdapter
+  private val customTab = CustomTabActivityHelper()
   // endregion
 
   // region Lifecycle
@@ -62,9 +67,9 @@ class UserWatchlistFragment : DaggerFragment(), UserWatchlistContract.View {
   }
 
   override fun onDestroyView() {
-    super.onDestroyView()
     presenter.onDetach()
     disposables.clear()
+    super.onDestroyView()
   }
   // endregion
 
@@ -144,6 +149,10 @@ class UserWatchlistFragment : DaggerFragment(), UserWatchlistContract.View {
   private fun setupRecyclerView() {
     adapter = UserWatchlistAdapter()
     adapter.setHasStableIds(true)
+    adapter.onItemClickListener = {
+      @Suppress("CAST_NEVER_SUCCEEDS")
+      it.url.openInCustomTab(activity as Activity)
+    }
 
     val linearLayoutManager = LinearLayoutManager(activity)
     val dividerItemDecoration = DividerItemDecoration(context, linearLayoutManager.orientation)

@@ -29,4 +29,6 @@
 
   <dimen name="user_avatar">96dp</dimen>
   <dimen name="onboarding_image_dimension">256dp</dimen>
+  <dimen name="github_icon_size">28dp</dimen>
+  <dimen name="logo_size">48dp</dimen>
 </resources>

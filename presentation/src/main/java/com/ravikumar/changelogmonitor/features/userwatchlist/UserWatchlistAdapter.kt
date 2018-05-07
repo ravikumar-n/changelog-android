@@ -10,13 +10,13 @@ import com.ravikumar.changelogmonitor.R
 import com.ravikumar.changelogmonitor.framework.extensions.getHumanReadableTags
 import com.ravikumar.changelogmonitor.framework.extensions.inflate
 import com.ravikumar.entities.Repository
-import kotlinx.android.synthetic.main.list_item_repository.view.descriptionTextView
-import kotlinx.android.synthetic.main.list_item_repository.view.tagsTextView
-import kotlinx.android.synthetic.main.list_item_repository.view.titleTextView
+import kotlinx.android.synthetic.main.list_item_user_watchlist.view.descriptionTextView
+import kotlinx.android.synthetic.main.list_item_user_watchlist.view.tagsTextView
+import kotlinx.android.synthetic.main.list_item_user_watchlist.view.titleTextView
 
 class UserWatchlistAdapter : Adapter<ViewHolder>() {
   // region Variables
-  private var onItemClickListener: ((Repository) -> Unit)? = null
+  var onItemClickListener: ((Repository) -> Unit)? = null
 
   private val repositories: MutableList<Repository> = mutableListOf()
   // endregion
@@ -61,7 +61,7 @@ class UserWatchlistAdapter : Adapter<ViewHolder>() {
 
   // region Private
   private fun createRepositoryViewHolder(parent: ViewGroup): RepositoryViewHolder {
-    val repoHolder = RepositoryViewHolder(view = parent.inflate(R.layout.list_item_repository))
+    val repoHolder = RepositoryViewHolder(view = parent.inflate(R.layout.list_item_user_watchlist))
     repoHolder.itemView.setOnClickListener({
       if (repoHolder.adapterPosition != RecyclerView.NO_POSITION) {
         onItemClickListener?.invoke(repositories[repoHolder.adapterPosition])
