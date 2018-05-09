@@ -10,8 +10,8 @@ ext {
 
   // Changelog apk Configuration
   appApplicationId = "com.ravikumar.changelogmonitor"
-  appVersionCode = 9
-  appVersionName = "0.9"
+  appVersionCode = 10
+  appVersionName = "1.0"
 
   // Release keystore
   KEYSTORE_STORE_FILE = rootProject.file(keystoreProperties['storeFile'])
