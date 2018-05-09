@@ -6,13 +6,18 @@ import com.google.firebase.analytics.FirebaseAnalytics
 
 class Analytics(@Nullable val analytics: FirebaseAnalytics?) {
   companion object {
+    // region Sign Up
+    const val EVENT_SIGN_UP = "signup_method"
     const val PARAM_SIGN_UP_METHOD_GOOGLE = "google"
     const val PARAM_SIGN_UP_METHOD_GUEST = "guest"
+    // endregion
 
+    // region Theme
     const val EVENT_THEME = "theme"
     const val THEME_DARK = "dark"
     const val THEME_LIGHT = "light"
     const val THEME_AUTO = "dayNight"
+    // endregion
   }
 
   fun logSignUp(
@@ -20,7 +25,7 @@ class Analytics(@Nullable val analytics: FirebaseAnalytics?) {
   ) {
     analytics?.let {
       val bundle = Bundle()
-      bundle.putString(FirebaseAnalytics.Param.SIGN_UP_METHOD, signUpMethod)
+      bundle.putString(EVENT_SIGN_UP, signUpMethod)
       it.logEvent(FirebaseAnalytics.Event.SIGN_UP, bundle)
     }
   }
@@ -47,6 +52,14 @@ class Analytics(@Nullable val analytics: FirebaseAnalytics?) {
         FirebaseAnalytics.Event.SHARE,
         bundle
       )
+    }
+  }
+
+  fun logNotificationViewed(name: String) {
+    analytics?.let {
+      val bundle = Bundle()
+      bundle.putString(FirebaseAnalytics.Param.CONTENT, name)
+      it.logEvent(FirebaseAnalytics.Event.VIEW_ITEM, bundle)
     }
   }
 }

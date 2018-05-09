@@ -33,6 +33,7 @@ class NotificationListener : FirebaseMessagingService() {
         UUID.fromString(it[KEY_REPO_ID]),
         it[KEY_NAME] ?: ""
       )
+      changelogDetailIntent.putExtra(BUNDLE_KEY_NOTIFICATION, true)
       changelogDetailIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
 
       val pendingIntent = TaskStackBuilder
@@ -83,6 +84,7 @@ class NotificationListener : FirebaseMessagingService() {
   // region Static
   companion object {
     // region Constants
+    const val BUNDLE_KEY_NOTIFICATION = "notification"
     private const val KEY_TITLE = "title"
     private const val KEY_BODY = "body"
     private const val KEY_REPO_ID = "repo_id"
