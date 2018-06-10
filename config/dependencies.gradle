@@ -21,33 +21,34 @@ ext {
 
   // Compile Dependencies
   kotlinVersion = "1.2.41"
-  gradleVersion = "3.1.2"
+  gradleVersion = "3.1.3"
   googleServicesVersion = "3.2.1"
   versionsPluginVersion = "0.17.0"
   crashlyticsPluginVersion = "1.25.1"
 
   // Android-libraries
   supportVersion = "27.1.1"
-  constraintlayoutVersion = "1.1.0"
+  constraintlayoutVersion = "1.1.1"
   playVersion = "15.0.1"
-  firebaseVersion= "15.0.2"
+  firebaseVersion= "16.0.0"
+  firebaseMessagingVersion="17.0.0"
   roomVersion = "1.0.0"
-  billingVersion = "1.0"
+  billingVersion = "1.1"
 
   // Third party libraries
   okHttpVersion = "3.10.0"
-  gsonVersion = "2.8.4"
+  gsonVersion = "2.8.5"
   daggerVersion = "2.16"
   timberVersion = "4.7.0"
   glideVersion = "4.7.1"
   retrofitVersion = "2.4.0"
   retrofitRxJavaAdapterVersion = "1.0.0"
   javaxInjectVersion = "1"
-  mdVersion = "1.0.4"
-  crashlyticsVersion = "2.9.2"
+  mdVersion = "1.0.5"
+  crashlyticsVersion = "2.9.3"
 
   // Reactive libraries
-  rxJavaVersion = "2.1.13"
+  rxJavaVersion = "2.1.14"
   rxAndroidVersion = "2.0.2"
   rxBindingVersion = "2.1.1"
   rxRelayVersion = "2.0.0"
@@ -116,7 +117,7 @@ ext {
 
                               // Firebase & co
                               firebaseCore            : "com.google.firebase:firebase-core:$firebaseVersion",
-                              firebaseMessaging       : "com.google.firebase:firebase-messaging:$firebaseVersion",
+                              firebaseMessaging       : "com.google.firebase:firebase-messaging:$firebaseMessagingVersion",
                               crashlytics             : "com.crashlytics.sdk.android:crashlytics:$crashlyticsVersion",
 
                               // Other
