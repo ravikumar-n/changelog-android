@@ -1,4 +1,4 @@
-# Changelog Monitor [![CircleCI](https://circleci.com/gh/ravikumar-n/changelog-android/tree/master.svg?style=svg)](https://circleci.com/gh/ravikumar-n/changelog-android/tree/master) (DISCONTINUED)
+# Changelog Monitor (DISCONTINUED)
 **Android app to monitor all your favorite libraries release and their changelog in one place.**
 
 <img src="presentation/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" align="left"
@@ -9,13 +9,7 @@ Changelog Monitor is available for free on the Google Play Store.
 
 Don't miss out any critical update of a library, subscribe and get notified about the new version within 2hrs of its release. 
 
-Currently the app supports 55 widely used libraries. As a free user you can subscribe and monitor 5 libraries. 
-
-<a href="https://play.google.com/store/apps/details?id=com.ravikumar.changelogmonitor">
-    <img alt="Get it on Google Play"
-        height="80"
-        src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" />
-</a>
+Currently the app supports 55 widely used libraries. As a free user you can subscribe and monitor 5 libraries.
  
 ### Code Style
 
