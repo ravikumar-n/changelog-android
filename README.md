@@ -1,4 +1,4 @@
-# Changelog Monitor [![CircleCI](https://circleci.com/gh/ravikumar-n/changelog-android/tree/master.svg?style=svg)](https://circleci.com/gh/ravikumar-n/changelog-android/tree/master)
+# Changelog Monitor [![CircleCI](https://circleci.com/gh/ravikumar-n/changelog-android/tree/master.svg?style=svg)](https://circleci.com/gh/ravikumar-n/changelog-android/tree/master) (DISCONTINUED)
 **Android app to monitor all your favorite libraries release and their changelog in one place.**
 
 <img src="presentation/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" align="left"
@@ -35,8 +35,8 @@ Ensure you have selected `staginDebug` variant under `BuildVariant` in Android S
 NOTE: <i>Your first API request may result in timeout, try again. If some weird issue happens, logout and start afresh.</i>
 
 ### Project Members
- - Designer - [Ahila Pillai](http://www.ahilapillai.com/) (**Available for Hire**)
- - Developer - [Ravikumar N](https://twitter.com/HappyRavi) (**[Available for Hire](https://www.linkedin.com/in/ravikumar89)**)
+ - Designer - [Ahila Pillai](http://www.ahilapillai.com/)
+ - Developer - [Ravikumar N](https://twitter.com/HappyRavi)
  
 ### Acknowledgments
  - [Fernando Cejas](https://twitter.com/fernando_cejas) for his awesome work on [Clean Architecture Kotlin](https://github.com/android10/Android-CleanArchitecture-Kotlin/commits/master).
